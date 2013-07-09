@@ -1,9 +1,9 @@
 {{Incubator}}
 {{VandR.Navigation|Model_Validation_and_Reasonableness_Checking/Amount_of_Travel|Model_Validation_and_Reasonableness_Checking/ModeChoice}}
-== 6.0 Trip Distribution/Destination Choice/Location Choice ==
+== Trip Distribution/Destination Choice/Location Choice ==
 This chapter discusses the validation of model components related to destination choices, or the trip distribution step of four-step models. In activity-based models, relevant model components include regular workplace and school location models, tour-level (primary activity) destination choice models, and trip-level (intermediate stop) destination choice models. All of these types are referred to in this chapter as “trip distribution models.”
 
-The most common format for trip distribution in four-step models is the gravity model, an aggregate model structure that estimates a production-attraction trip table from zone-level estimates of trip productions and attractions and measures of separation between zones. Separate models are developed for each trip purpose. In doubly constrained models, the model attempts to preserve the zonal input totals for both productions and attractions; in singly constrained models, it attempts to preserve the zonal input totals for productions only. “K‑factors” are sometimes applied to improve the match between modeled and observed trip distribution patterns. Most often, K-factors are applied at a district level, where a district represents a subset of the zones within a modeled region.
+The most common format for trip distribution in four-step models is the gravity model, an aggregate model structure that estimates a production-attraction trip table from zone-level estimates of trip productions and attractions and measures of separation between zones. Separate models are developed for each trip purpose. In doubly constrained models, the model attempts to preserve the zonal input totals for both productions and attractions; in singly constrained models, it attempts to preserve the zonal input totals for productions only. “K-factors” are sometimes applied to improve the match between modeled and observed trip distribution patterns. Most often, K-factors are applied at a district level, where a district represents a subset of the zones within a modeled region.
 
 In some four-step models, a multinomial logit destination choice model is used. The inputs include the same data as the gravity model, but other inputs may also be used, including socioeconomic characteristics of travelers or households and characteristics of production or attraction zones. A “size variable” corresponding to the attraction zone, generally the number of attractions or another measure of activity (such as a linear combination of employment by type and population or households) is used, usually in logarithmic form.
 
@@ -11,38 +11,39 @@ Multinomial logit is also the most common form of regular workplace location cho
 
 In activity-based models, or models with components that consider trip chaining, destination choice models for intermediate stops are used. These are also multinomial logit models that use size variables, impedance measures, and potentially characteristics of the trip maker or production/attraction zones. The main difference is that a “detour” impedance measure is used, which is the additional impedance to stop at the attraction zone compared to the impedance to travel directly between the origin and primary activity location.
 
-This chapter is organized as follows: First, checks of the friction factors parameters that define the measure of separation in the gravity model (which is typically used for trip distribution in four-step models) are discussed in [../FHWA-HEP-10-042/ch6.htm#sect6-1 Section 6.1]. [../FHWA-HEP-10-042/ch6.htm#fn19 19] [../FHWA-HEP-10-042/ch6.htm#sect6-2 Section 6.2] presents the validation of the trip distribution model along with troubleshooting strategies that may be applied in the model estimation or calibration steps if model validation does not meet desired standards. Checks applicable to both four-step and activity-based trip distribution models are described in [../FHWA-HEP-10-042/ch6.htm#sect6-2 Section 6.2].
+This chapter is organized as follows: First, checks of the friction factors parameters that define the measure of separation in the gravity model (which is typically used for trip distribution in four-step models) are discussed in [[#Friction Factor Checks|Friction Factor Checks]]. [[#fn19|19]] [[#Checks of Trip Distribution Model Results|Checks of Trip Distribution Model Results]] presents the validation of the trip distribution model along with troubleshooting strategies that may be applied in the model estimation or calibration steps if model validation does not meet desired standards. Checks applicable to both four-step and activity-based trip distribution models are described in [[#Checks of Trip Distribution Model Results|Checks of Trip Distribution Model Results]].
 
-=== 6.1 Friction Factor Checks ===
+=== Friction Factor Checks ===
 This section discusses checks of friction factors used as parameters in gravity trip distribution models. In logit destination choice models, impedance variables are used directly.
 
 Friction factors are used in the gravity model to represent the effects of travel impedance. Friction factors may be asserted for individual increments of impedance or computed from as a function of travel impedance, usually travel time. The most commonly used friction factor formula is the gamma function:
 
-F = a × tb × ect (6.1) 
+''F'' = ''a'' &times; ''t''<sup>b</sup> &times; '''e'''<sup>''ct''</sup>
 
 Where:
 
-* F = Friction factor;
-* t = travel impedance (usually time in minutes);
-* a, b, c = model parameters; and
-* e = base of natural logarithms.
+* ''F'' = Friction factor;
+* ''t'' = travel impedance (usually time in minutes);
+* ''a'',''b'', ''c'' = model parameters; and
+* '''e''' = base of natural logarithms.
 
 The gamma function reduces to two other commonly used functions for friction factors when either the b or c parameter is estimated to be zero. Specifically, the function reduces to the exponential function when the b parameter is zero, and to the power function when the c parameter is zero. As will be discussed below, both the b and c parameters should typically be negative (if nonzero), producing either a negative exponential function when the b parameter is zero or the inverse power function when the c parameter is zero.
 
 Calibrated or asserted friction factors for individual increments of impedance not fitting a specific mathematical function may also be used. Such friction factors are individually calibrated so that a modeled trip length frequency distribution matches an observed trip length frequency distribution.
 
-==== 6.1.1 Sources of Data ====
-The network data used for developing impedance measures are discussed in [../FHWA-HEP-10-042/ch3.htm#sect3-2 Section 3.2]. If friction factors are not computed by a formula, they are usually derived from a household travel survey data set or transferred from another model. Some modeling software packages will estimate friction factors by trip purpose directly from a survey data set using the trip length frequency distribution.
+==== Sources of Data ====
+The network data used for developing impedance measures are discussed in [[Model_Validation_and_Reasonableness_Checking/Model_Inputs#Transportation Network Data|Transportation Network Data (Model Inputs)]]. If friction factors are not computed by a formula, they are usually derived from a household travel survey data set or transferred from another model. Some modeling software packages will estimate friction factors by trip purpose directly from a survey data set using the trip length frequency distribution.
 
-==== 6.1.2 Aggregate Checks ====
+==== Aggregate Checks ====
 Friction factors should be monotonically decreasing from a peak that occurs at a very short travel time (e.g., five minutes or less) or its equivalent in nontime units. This assertion is based on the notion that, everything else being equal, travelers will try to reduce their travel time – traveling five minutes is more desirable than traveling six minutes if the need for travel can be satisfied at either time interval. If a formula such as the gamma function is used to compute the friction factors, this pattern is ensured if reasonable values for the parameters are chosen. The gamma function will be monotonically decreasing if both the b and c parameters are negative. If friction factors are derived directly from survey data, they should be checked to ensure monotonic decreases as travel times increase. While travel survey patterns usually show decreased trip frequency with high impedances, there may be places where the pattern is not “smooth.” Care should also be used to ensure that the minimum value for a friction factor is greater than zero; zero friction factors preclude any travel for the impedance range represented.
 
-Periodically, model estimation might result in a positive value for either the b or c parameter. This result might be acceptable in some cases. For example, if the trip distribution model distributes all person trips in motorized vehicles, the function might increase for very small impedance values, such as less than five minutes of travel time, and then monotonically decrease. In other cases, the model might monotonically decrease until an inflection point at a very large value of the impedance (see, for example, the nonhome-based function for “Large MPO 3” in [../FHWA-HEP-10-042/ch6.htm#t6-1 Table 6.1]). If that value is substantially larger than would ever be expected in the applications of the model for the region, the positive value for the parameter might be acceptable.
+Periodically, model estimation might result in a positive value for either the b or c parameter. This result might be acceptable in some cases. For example, if the trip distribution model distributes all person trips in motorized vehicles, the function might increase for very small impedance values, such as less than five minutes of travel time, and then monotonically decrease. In other cases, the model might monotonically decrease until an inflection point at a very large value of the impedance (see, for example, the nonhome-based function for “Large MPO 3” in [[#Table-t6-1|Table 6.1]]). If that value is substantially larger than would ever be expected in the applications of the model for the region, the positive value for the parameter might be acceptable.
 
-Parameters of formulas such as the gamma function may be checked for reasonableness by comparing them to those used in other models. [../FHWA-HEP-10-042/ch6.htm#t6-1 Table 6.1] presents the “b” and “c” parameters used by six MPOs of varying sizes. The parameters show a relatively large variation. Since friction factors can be scaled without impacting the distribution, the parameters shown in [../FHWA-HEP-10-042/ch6.htm#t6-1 Table 6.1] were scaled to be 1,000,000 at one minute of travel time. The resulting friction factor curves for the home-based work, home-based nonwork, and nonhome-based trip purposes are shown in Figures 6.1 through 6.3.
+Parameters of formulas such as the gamma function may be checked for reasonableness by comparing them to those used in other models. [[#Table-t6-1|Table 6.1]] presents the “b” and “c” parameters used by six MPOs of varying sizes. The parameters show a relatively large variation. Since friction factors can be scaled without impacting the distribution, the parameters shown in [[#Table-t6-1|Table 6.1]] were scaled to be 1,000,000 at one minute of travel time. The resulting friction factor curves for the home-based work, home-based nonwork, and nonhome-based trip purposes are shown in Figures [[#Figure6-1|6.1 through 6.3]].
 
 
-<center>Table 6.1 Trip Distribution Gamma Function Parameters</center>
+<div id="Table-t5-1"><center>Table 5.1 Example Home-Based Nonwork Trip Production Model</center></div>
+<div id="Table-t6-1"><center>Table 6.1 Trip Distribution Gamma Function Parameters</center></div>
 
 
 {| style="border-spacing:0;"
@@ -122,20 +123,26 @@ Parameters of formulas such as the gamma function may be checked for reasonablen
 
 Note that the gamma function parameters shown in these examples were calibrated based on good approximations of travel times, considering observed levels of congestion, in the various urban areas. Generally, in the larger, more congested areas, this requires feedback of travel times from the highway assignment step. In the smaller areas where congestion is infrequent, the free flow times are reasonable approximations of the travel times experienced on the highway system, and feedback may not be used.
 
-These parameters and graphs are provided as examples and are not intended to provide recommended or transferable friction factors. Differences in urban area geography and other characteristics make it difficult to determine “correct” friction factors for any particular context.Figure 6.1 Example Home-Based Work Friction Factors Based on Gamma Function[[Image:fig6-1.jpg]] Figure 6.2 Example Home-Based Nonwork Friction Factors Based on Gamma Function[[Image:fig6-2.jpg]] Figure 6.3 Example Nonhome-Based Friction Factors Based on Gamma Function[[Image:fig6-3.jpg]] ==== 6.1.3 Disaggregate Checks ====
+These parameters and graphs are provided as examples and are not intended to provide recommended or transferable friction factors. Differences in urban area geography and other characteristics make it difficult to determine “correct” friction factors for any particular context.
+
+<div id="Figure6-1">[[File:VandR-Fig6-1.jpg|frame|none|'''Example Home-Based Work Friction Factors Based on Gamma Function''']]</div>
+<div id="Figure6-2">[[File:VandR-Fig6-2.jpg|frame|none|'''Example Home-Based Nonwork Friction Factors Based on Gamma Function''']]</div>
+<div id="Figure6-3">[[File:VandR-Fig6-3.jpg|frame|none|'''Example Nonhome-Based Friction Factors Based on Gamma Function''']]</div>
+
+==== Disaggregate Checks ====
 There are no applicable disaggregate checks friction factors.
 
-==== 6.1.4 Criteria Guidelines ====
+==== Criteria Guidelines ====
 There are no applicable criteria guidelines for checks of friction factors.
 
-==== 6.1.5 Reasonableness and Sensitivity Testing ====
-Reasonableness checks have been presented as part of the aggregate checks presented in [../FHWA-HEP-10-042/ch6.htm#sect6-1-2 Section 6.1.2]. There are no applicable sensitivity checks of friction factors.
+==== Reasonableness and Sensitivity Testing ====
+Reasonableness checks have been presented as part of the aggregate checks presented in [[#Aggregate Checks|Aggregate Checks]. There are no applicable sensitivity checks of friction factors.
 
-==== 6.1.6 Troubleshooting Strategies ====
-[../FHWA-HEP-10-042/ch6.htm#t6-2 Table 6.2] shows some of the potential troubleshooting strategies for dealing with issues with friction factors.
+==== Troubleshooting Strategies ====
+[[#Table-t6-2|Table 6.2]] shows some of the potential troubleshooting strategies for dealing with issues with friction factors.
 
 
-<center>Table 6.2 Troubleshooting Strategies for Issues with Friction Factors</center>
+<div id="Table-t6-2"><center>Table 6.2 Troubleshooting Strategies for Issues with Friction Factors</center></div>
 
 
 {| style="border-spacing:0;"
@@ -151,10 +158,10 @@ Reasonableness checks have been presented as part of the aggregate checks presen
 
 
 |}
-=== 6.2 Checks of Trip Distribution Model Results ===
-Generally speaking, the types of models described in [../FHWA-HEP-10-042/ch6.htm Chapter 6] match production, origin, or home zones with the locations of trip attractions, destinations, or activities. For the trip distribution component of four-step models, these results are presented as trip tables. For components of activity-based models, the activity locations are modeled relative to the home location (or the work activity location in the case of a work-based subtour), but trip tables are not created; the results of other model components (e.g., daily activity patterns, intermediate stop models) are used so that trip tables are created later if needed. The outputs in these cases are matched origin and activity/destination locations. In the case of intermediate stop location models, the activity location is determined based on the locations of both a home/origin and a primary activity location. For simplicity, the results to be validated will be referred to as “trip tables” throughout this chapter.
+=== Checks of Trip Distribution Model Results ===
+Generally speaking, the types of models described in this chapter match production, origin, or home zones with the locations of trip attractions, destinations, or activities. For the trip distribution component of four-step models, these results are presented as trip tables. For components of activity-based models, the activity locations are modeled relative to the home location (or the work activity location in the case of a work-based subtour), but trip tables are not created; the results of other model components (e.g., daily activity patterns, intermediate stop models) are used so that trip tables are created later if needed. The outputs in these cases are matched origin and activity/destination locations. In the case of intermediate stop location models, the activity location is determined based on the locations of both a home/origin and a primary activity location. For simplicity, the results to be validated will be referred to as “trip tables” throughout this chapter.
 
-==== 6.2.1 Sources of Data ====
+==== Sources of Data ====
 The main sources of data for validation include the following:
 
 * '''Household travel/activity survey –''' If such a survey is available, it is likely to have been the data source for model estimation. It is the best source for information on local origin-destination travel data for all person trips. It can be used to produce trip length frequency distributions and can be expanded to produce a trip table of all travel made by the residents of a modeled region. The expanded trip table will not be statistically valid at the zone level but can be used at a more aggregate (district) level.
@@ -172,8 +179,8 @@ The main sources of data for validation include the following:
 ** Home-based work trips in models include trips home from work as well as to work.
 * '''National sources''' – National data sources include the National Household Travel Survey (NHTS), NCHRP Report 365, Travel Estimation Techniques for Urban Planning, which is being updated (the update is expected to be available in 2010), and other documents (e.g., TCRP Report 73, Characteristics of Urban Travel Demand).
 
-==== 6.2.2 Aggregate Checks ====
-There are two general types of aggregate checks of trip distribution model results: Trip length checks and origin-destination pattern checks, which are associated with base year scenarios. Scenario comparisons are an aggregate check appropriate for forecast and other types of alternative scenarios for which observed data may not be available and are discussed in [../FHWA-HEP-10-042/ch6.htm#sect6-2-5 Section 6.2.5].
+==== Aggregate Checks ====
+There are two general types of aggregate checks of trip distribution model results: Trip length checks and origin-destination pattern checks, which are associated with base year scenarios. Scenario comparisons are an aggregate check appropriate for forecast and other types of alternative scenarios for which observed data may not be available and are discussed in [[#Reasonableness and Sensitivity Testing|Reasonableness and Sensitivity Testing]].
 
 ===== Trip Length Checks =====
 The main trip length checks for base year scenarios involve comparing average trip lengths and trip length frequency distributions between model results and observed data from the household travel survey. For home-based work trips, CTPP data are often a supplementary source for trip length information. Trip length checks should be performed separately for each trip, tour, or activity purpose – essentially for each separately estimated model.
@@ -227,7 +234,7 @@ Plots of orientation ratios can also be used to qualitatively check trip distrib
 
 Another geographic check of travel patterns is the amount of intrazonal travel. This depends greatly on the definition of zones and the level of detail of the model. The modeled percentage of intrazonal trips should be compared to the observed percentage of intrazonal travel from the expanded household survey. These checks should be done separately by trip purpose and market segment and may also be done at the district level. [../FHWA-HEP-10-042/ch6.htm#fn20 20]
 
-==== 6.2.3 Disaggregate Checks ====
+==== Disaggregate Checks ====
 Since the gravity model is an aggregate formulation, there are no applicable disaggregate checks. Logit models are disaggregately estimated (one record per trip/activity), and therefore disaggregate validation is needed for logit destination choice models, along with the aggregate checks described above.
 
 Ideally, disaggregate validation of a model should be performed using a data set that is independent of the data set used for model estimation. For example, a survey data set might be divided in half, with one half used for model estimation and the other for model validation. As a practical matter, however, most urban area household travel surveys have such small sample sizes that the entire data set is needed for model estimation. In most cases, therefore, there is no independent model estimation data set available for validation.
@@ -236,7 +243,7 @@ Limited disaggregate validation can be performed using the same data set used fo
 
 While it is good practice to perform disaggregate validation of logit destination choice models, it is often difficult to use the results. Since a destination choice model usually consists of zones, there are hundreds or thousands of alternatives, making the reports of the model application very long and time consuming to analyze. Furthermore, as discussed above, typically household survey sample sizes do not have large enough sample sizes to analyze results at the zone level. While disaggregate validation is a useful tool to identify systematic biases in the estimated models, there are often aggregate tests that are more practical. For example, model application results could be segmented by trip length category, but the aggregate trip length checks described in [../FHWA-HEP-10-042/ch6.htm#sect6-2-2 Section 6.2.2] provide a much easier way of identifying whether modeled trip lengths are accurate.
 
-==== 6.2.4 Criteria Guidelines ====
+==== Criteria Guidelines ====
 The guidelines presented in this chapter are intended for use with the comparisons of base year modeled results to observed data shown in [../FHWA-HEP-10-042/ch6.htm#sect6-2-2 Section 6.2.2]. As with criteria guidelines throughout the validation process, the figures presented in this chapter are guidelines and are not to be interpreted as absolute standards. Meeting every guideline does not ensure a validated model, nor does missing a guideline imply that the model is not validated.
 
 Average trip lengths – Generally, the modeled average trip lengths for each trip purpose should be within five percent of observed for each trip purpose. In models with many trip purposes, some purposes may have relatively few trips, and so the five percent guideline can be relaxed in these cases.
@@ -247,7 +254,7 @@ Intrazonal trip percentages – Some models have used guidelines where regionwid
 
 Orientation ratios – Orientation ratios are a relatively new measure and, as a result, no guidelines have been set. However, as described in [../FHWA-HEP-10-042/ch6.htm#sect6-2-2 Section 6.2.2], if the ratios of modeled to observed orientation ratios are calculated, values closer to 1.0 imply a better match of the modeled distribution to the observed distribution. Likewise, if the differences between the ratio are calculated, values closer to zero imply a better match of modeled to observed distributions.
 
-==== 6.2.5 Reasonableness and Sensitivity Testing ====
+==== Reasonableness and Sensitivity Testing ====
 The reasonableness checks for trip distribution models are mainly the aggregate checks presented in [../FHWA-HEP-10-042/ch6.htm#sect6-2-2 Section 6.2.2].
 
 Sensitivity testing can be performed for trip distribution models by varying model inputs and checking results for reasonableness. Model inputs that can be varied include level of service variables used in the trip distribution model (time/speed and cost) and the level of activity/number of trips in different parts of the region. Some example tests include the following:
@@ -268,7 +275,7 @@ All of the checks listed previously in [../FHWA-HEP-10-042/ch6.htm#sect6-2-2 Sec
 
 The purpose of these comparisons is not to match the model results with those from the comparison scenario, but rather to determine whether the differences are reasonable. It is therefore important that those performing these checks include persons with knowledge of the modeled region as well as the models themselves.
 
-==== 6.2.6 Troubleshooting Strategies ====
+==== Troubleshooting Strategies ====
 Issues discovered during the model checks described in Sections [../FHWA-HEP-10-042/ch6.htm#sect6-2-2 6.2.2], [../FHWA-HEP-10-042/ch6.htm#sect6-2-3 6.2.3], and [../FHWA-HEP-10-042/ch6.htm#sect6-2-5 6.2.5] may imply errors in trip distribution model parameters or input data (networks/skims or trip ends). [../FHWA-HEP-10-042/ch6.htm#t6-3 Table 6.3] shows some of the typical problems that may be evident from these tests. Because it is a critical topic, one strategy, the use of K-factors, is discussed in more detail at the end of this chapter.
 
 
@@ -330,8 +337,8 @@ A valid use of K-factors may occur when it is necessary to “zero out” trips 
 <br />
 
 ----
-<div id="fn19">19</div>&nbsp;Friction factors define the measure of separation based on travel impedances between TAZs. Checks of travel impedance skims for travel time, travel distance, and travel cost are discussed in [../FHWA-HEP-10-042/ch3.htm#sect3-3 Section 3.3]. Those basic travel impedance skims are used for both trip distribution and mode choice modeling.
+<div id="fn19">19&nbsp;Friction factors define the measure of separation based on travel impedances between TAZs. Checks of travel impedance skims for travel time, travel distance, and travel cost are discussed in [../FHWA-HEP-10-042/ch3.htm#sect3-3 Section 3.3]. Those basic travel impedance skims are used for both trip distribution and mode choice modeling.</div>
 
-<div id="fn20">20</div>&nbsp;Zone-level intrazonal percentages from the survey data set are not statistically significant in most cases.
+<div id="fn20">20&nbsp;Zone-level intrazonal percentages from the survey data set are not statistically significant in most cases.</div>
 ----
 {{VandR.Navigation|Model_Validation_and_Reasonableness_Checking/Amount_of_Travel|Model_Validation_and_Reasonableness_Checking/ModeChoice}}
