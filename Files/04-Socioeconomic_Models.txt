@@ -1,5 +1,5 @@
 {{Incubator}}
-{{VandR.Navigation|Model_Validation_and_Reasonableness_Checking/Model_Inputs|Model_Validation_and_Reasonableness_Checking/Amount_of_Travel}}
+{{VandR.Navigation|Model_Validation_and_Reasonableness_Checking/Model_Inputs|Model_Validation_and_Reasonableness_Checking/Amount_Of_Travel}}
 
 === Socioeconomic Models ===
 __TOC__
@@ -769,7 +769,8 @@ Limited disaggregate validation can be performed using the same data set used fo
 | style="border:none;padding:0.0194in;"| '''5,000'''
 
 |}
-<div id="t4-3_a">a</div> Standard deviation of the number of vehicles reported in the estimation data set.
+<div id="t4-3_a">a&nbsp;&nbsp;Standard deviation of the number of vehicles reported in the estimation data set.</div>
+<br/>
 
 Some interesting observations can be made from the model check shown in [[#Table-t4-3|Table 4.3]]. The model is underestimating zero-vehicle households by about eight percent. While this could be addressed by increasing the constant for the zero-vehicle alternative relative to the other constants, further examination of the table indicates that this might not improve the model’s predictive capability. The underestimation of zero-vehicle households seems to be concentrated in low income households, and so increasing the constant might result in overestimation of zero-vehicle households among the medium and high income categories (and perhaps not enough improvement for low income households). It might be better to look at variables related to low income households, especially since the model seems to be overestimating multiple vehicle availability among low income households.
 

@@ -1,5 +1,5 @@
 {{Incubator}}
-{{VandR.Navigation|Model_Validation_and_Reasonableness_Checking/SocioeconomicModels|Model_Validation_and_Reasonableness_Checking/Distribution}}
+{{VandR.Navigation|Model_Validation_and_Reasonableness_Checking/Socioeconomic_Models|Model_Validation_and_Reasonableness_Checking/Distribution}}
 === Amount of Travel or Activity ===
 __TOC__
 
@@ -15,7 +15,7 @@ In activity-based modeling, the focus is the generation of daily activities perf
 
 Each tour may have intermediate stops, beyond the primary activity location, to perform additional activities. For example, a worker might have to drop off a child at day care on the way to work and pick the child up on the way from work to home. In a four-step model, such a pattern would result in two home-based nonwork trip productions (at the home), two home-based nonwork attractions at the day-care, and two nonhome-based trips, one with an origin at the day care and a destination at the work location and one with an origin at the work location and a destination at the day-care. In an activity-based model, such an activity pattern would result in one tour that includes two intermediate stops.
 
-Activity-based models do not compute trip attractions as used in four-step models. The activity locations that would correspond to the attraction ends of trips are estimated during the destination choice (primary activity and intermediate stop) models, which are described in [[Model_Validation_and_Reasonableness_Checking/Distribution|Chapter 6]]. This means that any checks of trip attractions described in this chapter cannot be performed until after the destination choice models have been estimated. It is still good practice, however, to perform these checks.
+Activity-based models do not compute trip attractions as used in four-step models. The activity locations that would correspond to the attraction ends of trips are estimated during the destination choice (primary activity and intermediate stop) models, which are described in [[Model_Validation_and_Reasonableness_Checking/Distribution|Chapter 6 (Distribution)]]. This means that any checks of trip attractions described in this chapter cannot be performed until after the destination choice models have been estimated. It is still good practice, however, to perform these checks.
 
 Multinomial logit is the most common form of models of tour and activity generation within activity-based models. These may range from relatively simple models of the exact number of tours or subtours to complex models indicating which combinations of activities are undertaken by a person throughout the day. Variables usually include a variety of characteristics of the traveler and his/her household, area or zone characteristics such as residential or employment density, and accessibility variables computed from “logsums” from subsequently applied destination and mode choice models, as well as a variety of constant terms related to individual alternatives (which may represent complex combinations of activities). It is important to recognize that an activity-based model will have several model components related to trip generation, and each of them must be validated individually, as well as the aggregate results of the activity generation process.
 
@@ -35,14 +35,14 @@ In four-step models, trips made for residential person travel are often referred
 
 Some models may also estimate joint activity or travel participation among household members, and so additional outputs related to this joint participation may be produced.
 
-==== Sources of Data ====
+==== Sources of Data (Trip Generation) ====
 Whenever a recent local household travel/activity survey is available, it is the source for the estimation of resident person travel models, whether in a four-step or activity-based modeling context. In some areas, establishment surveys are performed to assist in the development of trip attraction models.
 
 When recent survey data that could be used for model estimation are not available, model parameters such as trip rates may be transferred from another model or borrowed from other data sources. A common source is the National Household Travel Survey (NHTS), a national survey of personal travel last conducted in 2008. Some other national data sources include the NCHRP Report 365, Travel Estimation Techniques for Urban Planning, which is being updated (the update is expected to be available in 2010), and other documents (e.g., TCRP Report 73, Characteristics of Urban Travel Demand). These reports summarize information from the NHTS and from travel models for various types of urban areas and planning contexts.
 
 Models are estimated, of course, using the best available data, whether it is locally collected, transferred, or from national sources. The truly independent sources of trip generation data needed for model validation generally do not exist for the local area, except in the rare instance when a household survey data set is so large that it can be split into estimation and validation data sets. The validation checks described below therefore rely on the use of the estimation data sources themselves. The national sources can be used as reasonableness checks for various aggregate checks. Household survey data sets collected for two different points in time for a region might be used for sensitivity testing.
 
-==== Aggregate Checks ====
+==== Aggregate Checks (Trip Generation) ====
 ===== Four-Step Models =====
 ===== Trip Productions =====
 The main aggregate checks of trip generation models are comparisons of aggregate model results, usually trips per household by purpose by various other market segments, to observed data from the local household survey. Market segments may be defined by demographic or geographic characteristics, or any other variables by which model results and the comparison data sources are reported.
@@ -83,7 +83,7 @@ If a model has been estimated using local household survey data, the model resul
 |}
 Such results would suggest an area type or density bias that might be corrected to produce an improved trip generation model.
 
-Since, quite frequently, the same data set must be used for estimation and validation, it is a good idea to check the model results against other data sources, such as the national sources. Differences between the trip generation model results and the national data sources should be explainable by distinguishing local characteristics. Such checks are discussed in [[#Reasonableness and Sensitivity Testing|Reasonableness and Sensitivity Testing]].
+Since, quite frequently, the same data set must be used for estimation and validation, it is a good idea to check the model results against other data sources, such as the national sources. Differences between the trip generation model results and the national data sources should be explainable by distinguishing local characteristics. Such checks are discussed in [[#Reasonableness and Sensitivity Testing (Trip Generation)|Reasonableness and Sensitivity Testing (Trip Generation)]].
 
 
 <div id="Table-t5-1"><center>Table 5.1 Example Home-Based Nonwork Trip Production Model</center></div>
@@ -141,7 +141,7 @@ These factors result in the number of home-based work trips per employee being m
 
 In theory, the estimated total trip productions must be equal to the total trip attractions for each trip purpose, since each trip has two ends, a production and an attraction. In model application, however, the estimation of trip productions and attractions will not be exactly equal. This can cause issues with the application of trip distribution models since a doubly constrained model will attempt to match both productions and attractions. While the different trip production and attraction models contribute to the imbalance, much of the difference may be explained by the estimates of the socioeconomic data used in model application.
 
-Before checking the balance between productions and attractions, the effects of nonresidential person travel must be considered. If significantly more people from outside the modeled region work, shop, and perform other activities within the region than residents perform these activities outside, there should be more internal-internal attractions than productions, offset by a corresponding surplus of external trip productions over attractions. This imbalance must be carefully computed since many models use vehicle trips for external travel and person trips for residential travel. (External travel is discussed in [[#External/Nonresident Travel|External/Nonresident Travel]].) Another area of imbalance that must be considered is special generators (discussed in [[Special Generators|Special Generators]]). Special generator trips are often dominated by or are exclusively trip attractions – for example, airports generate no home-based productions – and so the effects of these “extra attractions” must be considered before balancing productions and attractions regionally.
+Before checking the balance between productions and attractions, the effects of nonresidential person travel must be considered. If significantly more people from outside the modeled region work, shop, and perform other activities within the region than residents perform these activities outside, there should be more internal-internal attractions than productions, offset by a corresponding surplus of external trip productions over attractions. This imbalance must be carefully computed since many models use vehicle trips for external travel and person trips for residential travel. (External travel is discussed in [[#External/Nonresident Travel|External/Nonresident Travel]].) Another area of imbalance that must be considered is special generators (discussed in [[#Special Generators|Special Generators]]). Special generator trips are often dominated by or are exclusively trip attractions – for example, airports generate no home-based productions – and so the effects of these “extra attractions” must be considered before balancing productions and attractions regionally.
 
 Once these effects have been considered, the balance between productions and attractions can be checked for each trip purpose. Assuming that the production and attraction models have been developed from the same data source, the ratio of regionwide productions to attractions by purpose should fall in the range of 0.90 to 1.10 prior to balancing. For the base year, the balance between productions and attractions is, in effect, a validation measure. If there is not a close match, the reasons for the lack of match should be investigated.
 
@@ -160,7 +160,7 @@ These measures can be summarized by market segment (e.g., area type) in a simila
 
 Since trip attractions are not directly estimated in activity-based models, there are no checks of “activity attractions” corresponding to trip attraction checks or checks of balancing of productions and attractions at this stage of the modeling process. However, after destination choice modeling and intermediate stop modeling are performed, some tests analogous to trip attraction model checks may be performed. For example, after the application of all tour destination and intermediate stop location choice models, trip tables analogous to trip-based trip tables should be available for processing. It may be possible to aggregate the various tables by purposes similar to those used for trip-based models to summarize “attractions” by purpose. The resulting summaries could be used to estimate implied “trip attraction rates” for some purposes to check the reasonableness of the resulting travel. For example, it might be possible to summarize home-based work half-tours (i.e., those without an intermediate stop on the journey to or from the work location, depending on the direction of the half-tour) by the work zone. The tours could be divided by the total number of employees to estimate the implied trip attractions per employee. For the base year, the implied trip rate should be reasonably close to the trip attraction rate used for trip-based models.
 
-==== Disaggregate Checks ====
+==== Disaggregate Checks (Trip Generation) ====
 The trip generation model forms associated with four-step models, such as cross-classification and linear regression models, are applied aggregately, and so there are no applicable disaggregate checks.
 
 Logit models are disaggregately estimated (one record per person/activity/stop), and therefore disaggregate validation is needed for the logit choice models associated with activity-based models, along with the aggregate checks described above.
@@ -169,10 +169,10 @@ Ideally, disaggregate validation of a model should be performed using a data set
 
 Limited disaggregate validation can be performed using the same data set used for model estimation, but reporting the results by market segment. Logit model estimation software has the capability to apply the estimated model to a data set in the same form as the estimation data set. For example, a logit model could be applied to the data set used for estimation but the results may be reported by vehicle availability level. It might be found, for example, that certain activity patterns are not being chosen often enough in the model for households with zero vehicles.
 
-==== Criteria Guidelines ====
+==== Criteria Guidelines (Trip Generation) ====
 There are no specific criteria guidelines associated with the trip generation checks described above. While no specific guidelines are associated with trip generation, trip generation is the first basic step in the modeling process; errors and inaccuracies in this step may propagate throughout the modeling process.
 
-==== Reasonableness and Sensitivity Testing ====
+==== Reasonableness and Sensitivity Testing (Trip Generation) ====
 The primary reasonableness checks for trip generation models are comparisons of aggregate trip rates to those estimated for other regions. [[#Table-t5-2|Table 5.2]] shows total person trips per household by trip purpose for different metropolitan area sizes based on the 2001 NHTS. This table is segmented by household size (number of persons in the household). [[#Table-t5-2|Table 5.2]] provides the opportunity for comparisons of several types of trip production model results, including:
 
 * Total trips per household; 
@@ -197,6 +197,7 @@ An additional reasonableness check for cross-classification models is to ensure 
 | style="border:none;padding:0.0194in;"| <center>'''All Households'''</center>
 
 |-
+| style="border:none;padding:0.0194in;"| &nbsp;
 | style="border:none;padding:0.0194in;"| <center>'''1'''</center>
 | style="border:none;padding:0.0194in;"| <center>'''2'''</center>
 | style="border:none;padding:0.0194in;"| <center>'''3'''</center>
@@ -447,6 +448,7 @@ Source: 2001 NHTS.
 | colspan="4"  style="border:none;padding:0.0194in;"| <center>'''Number of Workers'''</center>
 
 |-
+| style="border:none;padding:0.0194in;"| &nbsp;
 | style="border:none;padding:0.0194in;"| <center>'''0'''</center>
 | style="border:none;padding:0.0194in;"| <center>'''1'''</center>
 | style="border:none;padding:0.0194in;"| <center>'''2'''</center>
@@ -647,6 +649,7 @@ Source: 2001 NHTS.
 | colspan="4"  style="border:none;padding:0.0194in;"| <center>'''Number of Autos'''</center>
 
 |-
+| style="border:none;padding:0.0194in;"| &nbsp;
 | style="border:none;padding:0.0194in;"| <center>'''0'''</center>
 | style="border:none;padding:0.0194in;"| <center>'''1'''</center>
 | style="border:none;padding:0.0194in;"| <center>'''2'''</center>
@@ -848,12 +851,13 @@ Source: 2001 NHTS.
 | colspan="6"  style="border:none;padding:0.0194in;"| <center>'''Income Level (in 2000 Dollars)'''</center>
 
 |-
-| style="border:none;padding:0.0194in;"| <nowiki><center>'''Missing'''</center></nowiki>
-| style="border:none;padding:0.0194in;"| <nowiki><center>'''$0-$10,000'''</center></nowiki>
-| style="border:none;padding:0.0194in;"| <nowiki><center>'''$10,000-$25,000'''</center></nowiki>
-| style="border:none;padding:0.0194in;"| <nowiki><center>'''$25,000-$50,000'''</center></nowiki>
-| style="border:none;padding:0.0194in;"| <nowiki><center>'''$50,000-$100,000'''</center></nowiki>
-| style="border:none;padding:0.0194in;"| <nowiki><center>'''Over $100,000'''</center></nowiki>
+| style="border:none;padding:0.0194in;"| &nbsp;
+| style="border:none;padding:0.0194in;"| <center>'''Missing'''</center>
+| style="border:none;padding:0.0194in;"| <center>'''<nowiki>$0-$10,000</nowiki>'''</center>
+| style="border:none;padding:0.0194in;"| <center>'''<nowiki>$10,000-$25,000</nowiki>'''</center>
+| style="border:none;padding:0.0194in;"| <center>'''<nowiki>$25,000-$50,000</nowiki>'''</center>
+| style="border:none;padding:0.0194in;"| <center>'''<nowiki>$50,000-$100,000</nowiki>'''</center>
+| style="border:none;padding:0.0194in;"| <center>'''<nowiki>Over $100,000</nowiki>'''</center>
 
 |-
 | style="border:none;padding:0.0194in;"| <center>'''Home-Based Work'''</center>
@@ -1161,7 +1165,7 @@ The logit models used for trip generation in activity-based models are sensitive
 
 Generally, speaking, however, trip generation has not been found to be very sensitive to changes in transportation accessibility, beyond the effects of changes in land use and development. Destination, time-of-day, and route choices are much more sensitive to changes in transportation level of service. So a reasonable result might be that changes in trip generation resulting from changes in level of service are small.
 
-==== Troubleshooting Strategies ====
+==== Troubleshooting Strategies (Trip Generation) ====
 In the past, while checks of trip generation results were relatively uncommon, calibration adjustments to trip rates were often made in response to other system-level validation checks. For example, it was sometimes found that vehicle miles traveled (VMT) from the model were too low compared to observed data from traffic counts. A common response would be to increase trip rates for nonwork travel, on the assumption that nonwork trips were more likely to be underreported in the surveys from which the models were estimated. There seems to be some merit to this claim as survey methods have improved over the years, and fewer trips go unreported. However, there was no direct connection between the underreporting of trips and the shortfall in modeled VMT.
 
 Since there is no independent local data source with which to validate trip generation models, the possible model problems that could be indicated by the checks described in this chapter have to do with discrepancies within the survey data set, between the survey data and the socioeconomic data used to apply the model, and between local data and national sources. [[#Table-t5-7|Table 5.7]] shows some of the typical issues that might be found from these tests.
@@ -1205,7 +1209,7 @@ Since there is no independent local data source with which to validate trip gene
 
 
 |}
-==== Forecast Checks ====
+==== Forecast Checks (Trip Generation) ====
 Trip generation forecasts should be compared to base year estimates for reasonableness. Specifically, trip or activity generation rates per household or per person for the forecast year should be compared to the base year. For trip-based models, past trends in many areas, as documented in the 1997 FHWA Model Validation and Reasonableness Checking Manual, have shown total trips per person to be increasing over time, albeit at a decreasing rate. The changes in per capita trip rates are probably caused by a number of factors that may or may not be included in the trip generation models, including:
 
 * Decreasing household sizes since smaller households tend to generate more trips per capita than larger households;
@@ -1279,27 +1283,28 @@ There are four major data sources that may be relevant to the modeling and valid
 | style="border:none;padding:0.0194in;"| Volume only [[#t5-8_a|a]]
 
 |}
-<div id="t5-8_a">a</div>&nbsp;Traffic/passenger counts include these trips, but do not separate them into their component categories and include no information on traveler or trip characteristics.
+<div id="t5-8_a">a&nbsp;Traffic/passenger counts include these trips, but do not separate them into their component categories and include no information on traveler or trip characteristics.</div>
+<br/>
 
-==== Aggregate Checks ====
+==== Aggregate Checks (External Models) ====
 Because both traffic (and perhaps transit passenger) count data and external cordon survey data (where available) are used in the estimation of external travel models, there are likely no independent data sources with which to validate these models. The main checks include ensuring consistency with the model estimation data. These checks include the following:
 
-* Comparing total modeled base year vehicle trips (including resident I‑X, nonresident X-I, and X-X) trips to the base year traffic count for each external station. Caution should be exercised in considering that traffic counts may include trucks, which are modeled separately (see [[#Commercial Vehicle and Freight Travel|Commercial Vehicle and Freight Travel]]). The best approach is to compare the vehicle trips associated with external/nonresident passenger travel to the traffic count excluding trucks, and to compare separately the truck model results with the truck count.
+* Comparing total modeled base year vehicle trips (including resident I-X, nonresident X-I, and X-X) trips to the base year traffic count for each external station. Caution should be exercised in considering that traffic counts may include trucks, which are modeled separately (see [[#Commercial Vehicle and Freight Travel|Commercial Vehicle and Freight Travel]]). The best approach is to compare the vehicle trips associated with external/nonresident passenger travel to the traffic count excluding trucks, and to compare separately the truck model results with the truck count.
 * Comparing total implied trip rates, including all internal and external passenger travel, across zones. The implied trip rates are the total person trip productions (internal and external) per household and total person trip attractions per employee. Particular attention should be paid to comparing implied trip rates for zones located near the modeled region boundary and interior zones. Because models should generate more external travel for outlying zones, this check will ensure that these additional external trips were not “double counted” along with resident internal-internal trips. A corresponding check is the percentage of total generated person trips that are external, which should be higher for outlying zones.
 
-==== Disaggregate Checks ====
+==== Disaggregate Checks (External Models) ====
 There are no applicable disaggregate checks of external travel models.
 
-==== Criteria Guidelines ====
+==== Criteria Guidelines (External Models) ====
 There are no applicable criteria guidelines for checks of external travel models.
 
-==== Reasonableness and Sensitivity Testing ====
-The reasonableness checks for external travel models are mainly the aggregate checks presented in [[#Aggregate Checks|Aggregate Checks]].
+==== Reasonableness and Sensitivity Testing (External Models) ====
+The reasonableness checks for external travel models are mainly the aggregate checks presented in [[#Aggregate Checks (External Models)|Aggregate Checks (External Models)]].
 
-==== Troubleshooting Strategies ====
+==== Troubleshooting Strategies (External Models) ====
 [[#Table-t5-9|Table 5.9]] shows some typical issues with external travel model results and suggested strategies for dealing with them.
 
-==== Forecasting Checks ====
+==== Forecasting Checks (External Models) ====
 Forecast internal-external and external-external travel should be compared to base year for reasonableness. Growth rates in travel can be compared to growth rates for internal person trips, and significant differences should be explainable using demographic forecast data.
 
 
@@ -1346,7 +1351,7 @@ Commodity flow models are often found in connection with models of larger region
 
 In commodity flow models, the tonnage of freight (either by all modes or only by truck) is estimated using input variables of employment by type and households. The employment types for these models are often more disaggregate than those used in person trip attraction models. These models are often linear regression models, similar in form to person trip attraction models. Normally, one set of regression equations for the production end and one set of regression equations for consumption end are estimated. These regression equations are either developed for each commodity group or type. The outputs of this tonnage generation process are tons of each commodity produced and consumed for each zone.
 
-Following tonnage generation, a tonnage distribution model is run, often a gravity model similar to those used for person trip distribution (see [[Model_Validation_and_Reasonableness_Checking/Distribution|Chapter 6]]). If multimodal freight tonnage has been generated, a mode choice step follows, where the tonnage tables of freight that are the outputs of tonnage distribution are split into tons by mode (truck, rail, water, air, etc.). Finally, a process to convert tons of truck freight to truck vehicle trips is applied, resulting in truck vehicle trip tables that may be used in the highway assignment process. Truck trips are often modeled by vehicle size category. An example categorization is:
+Following tonnage generation, a tonnage distribution model is run, often a gravity model similar to those used for person trip distribution (see [[Model_Validation_and_Reasonableness_Checking/Distribution|Chapter 6 (Distribution)]]). If multimodal freight tonnage has been generated, a mode choice step follows, where the tonnage tables of freight that are the outputs of tonnage distribution are split into tons by mode (truck, rail, water, air, etc.). Finally, a process to convert tons of truck freight to truck vehicle trips is applied, resulting in truck vehicle trip tables that may be used in the highway assignment process. Truck trips are often modeled by vehicle size category. An example categorization is:
 
 * Light trucks (four-tire); 
 * Medium trucks (single unit/6+ tire); and 
@@ -1358,7 +1363,7 @@ Truck vehicle trip models use truck trip generation equations, which are also us
 
 There are several other types of commercial vehicles that may be present in modeled regions. These types of commercial vehicles are seldom modeled explicitly although a few models, mainly in large urban areas, do specifically consider taxi trips. A good source for information on commercial vehicle travel is Cambridge Systematics et al, 2004. ([[#fn16|16]])
 
-==== Sources of Data ====
+==== Sources of Data (Truck Models) ====
 The main sources of data for truck/freight model validation include the following:
 
 * '''Local truck/commercial vehicle survey –''' If such a survey is available, it is likely to have been the data source for truck/freight model estimation. It is the best source for information on local origin-destination travel data for truck trips. However, such surveys are relatively uncommon.
@@ -1369,26 +1374,26 @@ The main sources of data for truck/freight model validation include the followin
 * '''Other national sources –''' National data sources include the ''Quick Response Freight Manual II'' ([[#fn17|17]]) and its predecessor report the ''Quick Response Freight Manual''. ([[#fn18|18]]) These reports provide parameter values from other truck/freight models as well as information on other data sources.
 * '''Vehicle classification counts –''' Vehicle classification counts that specify the numbers of trucks by vehicle size category used in the model are critical data needed for validation of truck travel models.
 
-==== Aggregate Checks ====
+==== Aggregate Checks (Truck Models) ====
 If commercial vehicle or freight models have been developed from local survey data, aggregate checks analogous to those specified for trip generation models might be possible. For example, estimated total truck trips from the model could be compared to truck trips from the expanded truck survey.
 
 Because of the relative lack of local data on truck and freight movements, the main check of truck/freight models cannot really occur until the highway assignment stage, when modeled truck volumes can be compared to vehicle classification traffic counts. If modeled truck volumes are too high (or low) compared to observations, this likely means that the trip/tonnage generation rates are too high (or low), or the truck trip lengths are too long (or short). Vehicle classification counts cannot distinguish full versus empty trucks, freight versus nonfreight related commercial vehicle movements, or intraregional versus interregional truck movements. Thus, the vagaries associated with vehicle classification traffic counts make validation of truck trip generation models after traffic assignment very coarse.
 
 Truck and freight movements can vary significantly depending on geographic, economic, and land use characteristics of an area. It is therefore difficult to determine typical truck travel parameters for areas based on national data sources. The average values provided in these sources may differ significantly from those found in individual areas.
 
-==== Disaggregate Checks ====
+==== Disaggregate Checks (Truck Models) ====
 There are no applicable disaggregate checks of truck/freight models.
 
-==== Criteria Guidelines ====
+==== Criteria Guidelines (Truck Models) ====
 There are no applicable criteria guidelines for checks of truck/freight models.
 
-==== Reasonableness and Sensitivity Testing ====
-If truck/freight models have been developed using locally collected survey data, the resulting models can be compared to national sources identified in [[#Sources of Data|Sources of Data]]. Otherwise, the primary reasonableness checks for truck/freight models are the comparisons to vehicle classification traffic counts, as discussed in [[#Aggregate Checks|Aggregate Checks]].
+==== Reasonableness and Sensitivity Testing (Truck Models) ====
+If truck/freight models have been developed using locally collected survey data, the resulting models can be compared to national sources identified in [[#Sources of Data (Truck Models)|Sources of Data (Truck Models)]]. Otherwise, the primary reasonableness checks for truck/freight models are the comparisons to vehicle classification traffic counts, as discussed in [[#Aggregate Checks (Truck Models)|Aggregate Checks (Truck Models)]].
 
-==== Troubleshooting Strategies ====
-As implied in [[#Aggregate Checks|Aggregate Checks]], the calibration strategies for truck/freight models are adjustments to truck model parameters to address significant differences between modeled truck volumes and vehicle classification traffic counts.
+==== Troubleshooting Strategies (Truck Models) ====
+As implied in [[#Aggregate Checks (Truck Models)|Aggregate Checks (Truck Models)]], the calibration strategies for truck/freight models are adjustments to truck model parameters to address significant differences between modeled truck volumes and vehicle classification traffic counts.
 
-==== Forecasting Checks ====
+==== Forecasting Checks (Truck Models) ====
 Forecast truck/freight travel should be compared to base year for reasonableness. For example, overall numbers of truck trips per employee in the modeled region might be compared for forecast and based years. Also, after the traffic assignment step, the regional truck VMT to total VMT for the modeled region should be compared for reasonableness.
 
 === Special Generators ===
@@ -1406,41 +1411,41 @@ Typically, the estimated demand for each special generator is asserted outside t
 
 Many special generators are atypical not only in the amount of travel demand generated relative to variables typically used in trip generation models, but also in their trip distribution, mode choice, and time-of-day characteristics. In such cases, it is preferable to conduct surveys of travelers to the special generators to develop separate models for these components. In effect, the special generators are treated as separate trip purposes. For example, many models have reduced the need for special generators by modeling home-based university and airport trips as separate trip purposes. However, it is often infeasible to collect such survey data, due to the expense or the difficulty in obtaining permission to survey at privately owned facilities.
 
-==== Sources of Data ====
+==== Sources of Data (Special Generators) ====
 The main sources of data for special generator model estimation and validation include:
 
 * Special generator traveler survey, as described above; and
 * '''Traffic or person trip counts''' at or near the special generator location.
 
-==== Aggregate Checks ====
+==== Aggregate Checks (Special Generators) ====
 If counts of trips to/from the special generator are available, the trips generated by the model can be compared to these counts. If such counts are unavailable, it may be possible to conduct traffic counts on nearby roadways leading or adjacent to the special generator, and highway assignment results on these roadways can be compared to the counts.
 
-==== Disaggregate Checks ====
+==== Disaggregate Checks (Special Generators) ====
 There are no applicable disaggregate checks of special generator models.
 
-==== Criteria Guidelines ====
+==== Criteria Guidelines (Special Generators) ====
 There are no applicable criteria guidelines for checks of special generator models.
 
-==== Reasonableness and Sensitivity Testing ====
-The reasonableness checks for special generator travel models are the comparisons to traffic or person trip counts, as discussed in [[#Aggregate Checks|Aggregate Checks]].
+==== Reasonableness and Sensitivity Testing (Special Generators) ====
+The reasonableness checks for special generator travel models are the comparisons to traffic or person trip counts, as discussed in [[#Aggregate Checks (Special Generators)|Aggregate Checks (Special Generators)]].
 
-==== Troubleshooting Strategies ====
-Since the demand levels for special generators are asserted, it is a relatively simple matter to adjust these demand levels to address any significant discrepancies between the modeled trips/volumes and the count data described in [[#Sources of Data|Sources of Data]] and [[#Aggregate Checks|Aggregate Checks]].
+==== Troubleshooting Strategies (Special Generators) ====
+Since the demand levels for special generators are asserted, it is a relatively simple matter to adjust these demand levels to address any significant discrepancies between the modeled trips/volumes and the count data described in [[#Sources of Data (Special Generators)|Sources of Data]] and [[#Aggregate Checks (Special Generators)|Aggregate Checks (Special Generators)]].
 
-==== Forecasting Checks ====
+==== Forecasting Checks (Special Generators) ====
 Forecast special generator trips should be compared to base year special generator trips for reasonableness. It is important to stratify special generator trips into those expected to increase over time versus those that are expected to remain relatively static. For example, special generator trips for universities and colleges, military establishments, and hospitals might be expected to remain relatively static unless enrollment, troop levels, or numbers of beds are forecasted to change. Conversely, special generator trips to recreational attractions such as parks or open space or to regional shopping centers might be expected to grow with the population of the region even if the basis for the special generator remains unchanged.
 
 ----
-<div id="fn13">13</div>&nbsp;Cross-classification is actually a specific form of linear regression where the effects of independent variables (vehicle availability, household size, etc.) are allowed to have a general nonlinear effect. An equivalent linear regression formulation would have appropriately defined dummy variables to represent the effect of each combination value of the independent variables.
+<div id="fn13">13&nbsp;Cross-classification is actually a specific form of linear regression where the effects of independent variables (vehicle availability, household size, etc.) are allowed to have a general nonlinear effect. An equivalent linear regression formulation would have appropriately defined dummy variables to represent the effect of each combination value of the independent variables.</div>
 
-<div id="fn14">14</div>&nbsp;Cases of workers making more than one round trip between home and work on the same day do occur but are relatively rare. There are far fewer cases than those of the workers not making home-based work trips described later in the paragraph.
+<div id="fn14">14&nbsp;Cases of workers making more than one round trip between home and work on the same day do occur but are relatively rare. There are far fewer cases than those of the workers not making home-based work trips described later in the paragraph.</div>
 
-<div id="fn15">15</div>&nbsp;Cambridge Systematics, Inc., ''FSUTMS-Cube Framework Phase II – Model Calibration and Validation Standards: Model Validation Guidelines and Standards'', prepared for Florida Department of Transportation Systems Planning Office, 2008.
+<div id="fn15">15&nbsp;Cambridge Systematics, Inc., ''FSUTMS-Cube Framework Phase II – Model Calibration and Validation Standards: Model Validation Guidelines and Standards'', prepared for Florida Department of Transportation Systems Planning Office, 2008.</div>
 
-<div id="fn16">16</div>&nbsp;Cambridge Systematics, Inc., A. Chatterjee, and H. Cohenm, ''Accounting for Commercial Vehicles in Urban Transportation Models'', prepared for the Federal Highway Administration, Washington, D.C., 2004.
+<div id="fn16">16&nbsp;Cambridge Systematics, Inc., A. Chatterjee, and H. Cohenm, ''Accounting for Commercial Vehicles in Urban Transportation Models'', prepared for the Federal Highway Administration, Washington, D.C., 2004.</div>
 
-<div id="fn17">17</div>&nbsp;Beagan, D., M. Fischer, and A. Kuppam, ''Quick Response Freight Manual II'', Publication No. FHWA-HOP-08-010, prepared by Cambridge Systematics, Inc., for the Federal Highway Administration, September 2007.
+<div id="fn17">17&nbsp;Beagan, D., M. Fischer, and A. Kuppam, ''Quick Response Freight Manual II'', Publication No. FHWA-HOP-08-010, prepared by Cambridge Systematics, Inc., for the Federal Highway Administration, September 2007.</div>
 
-<div id="fn18">18</div>&nbsp;''Quick Response Freight Manual'', prepared by Cambridge Systematics, Inc., Comsis Corporation, and the University of Wisconsin-Milwaukee, for the Federal Highway Administration, September 1996.
+<div id="fn18">18&nbsp;''Quick Response Freight Manual'', prepared by Cambridge Systematics, Inc., Comsis Corporation, and the University of Wisconsin-Milwaukee, for the Federal Highway Administration, September 1996.</div>
 ----
-{{VandR.Navigation|Model_Validation_and_Reasonableness_Checking/SocioeconomicModels|Model_Validation_and_Reasonableness_Checking/Distribution}}
+{{VandR.Navigation|Model_Validation_and_Reasonableness_Checking/Socioeconomic_Models|Model_Validation_and_Reasonableness_Checking/Distribution}}
