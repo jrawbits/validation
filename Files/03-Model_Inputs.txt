@@ -1,5 +1,6 @@
 {{Incubator}}
-{{VandR.Navigation|Model_Validation_and_Reasonableness_Checking/ValidationPlan|Model_Validation_and_Reasonableness_Checking/SocioeconomicModels}}
+{{VandR.Navigation|Model_Validation_and_Reasonableness_Checking/Validation_Plan|Model_Validation_and_Reasonableness_Checking/Socioeconomic_Models}}
+
 === Validating Model Inputs ===
 __TOC__
 
@@ -96,11 +97,49 @@ Transportation network data are the basic descriptors of the available transport
 
 |-
 | style="border:none;padding:0.0194in;"| TYPE
-| style="border:none;padding:0.0194in;"| Type of link:1&nbsp;&nbsp;&nbsp; – Standard roadway link2&nbsp;&nbsp;&nbsp; – Transit only link (bus or rail)98&nbsp; – Walk or bicycle only link
+| style="border:none;padding:0.0194in;"|
+   {| style="border-spacing:0;"
+   | '''Link Type'''
+   | '''Description'''
+   |-
+   | style="border:none;paddng:0.0194in;"| 1
+   | Standard roadway link
+   |-
+   | style="border:none;paddng:0.0194in;"| 2
+   | Transit only link (bus or rail)
+   |-
+   | style="border:none;paddng:0.0194in;"| 98
+   | Walk or bicycle only link
+   |}
 
 |-
 | style="border:none;padding:0.0194in;"| FACILITY_TYPE
-| style="border:none;padding:0.0194in;"| Type of facility:1&nbsp;&nbsp;&nbsp; – Freeway2&nbsp;&nbsp;&nbsp; – Major regional arterial3&nbsp;&nbsp;&nbsp; – Principal arterial4&nbsp;&nbsp;&nbsp; – Minor arterial5&nbsp;&nbsp;&nbsp; – Collector6&nbsp;&nbsp;&nbsp; – Ramp9&nbsp;&nbsp;&nbsp; – TAZ centroid connector
+| style="border:none;padding:0.0194in;"|
+	{|
+	| '''Type of facility'''
+	| '''Description'''
+	|-
+	| 1
+	| Freeway
+	|-
+	| 2
+	| Major regional arterial
+	|-
+	| 3
+	| Principal arterial
+	|-
+	| 4
+	| Minor arterial
+	|-
+	| 5
+	| Collector
+	|-
+	| 6
+	| Ramp
+	|-
+	| 9
+	| TAZ centroid connector
+	|}
 
 |-
 | style="border:none;padding:0.0194in;"| LANES
@@ -108,7 +147,24 @@ Transportation network data are the basic descriptors of the available transport
 
 |-
 | style="border:none;padding:0.0194in;"| HOV
-| style="border:none;padding:0.0194in;"| High-occupancy vehicle code1&nbsp;&nbsp;&nbsp; – General purpose lane2&nbsp;&nbsp;&nbsp; – 2+ HOV lane3&nbsp;&nbsp;&nbsp; – 3+ HOV lane
+| style="border:none;padding:0.0194in;"| High-occupancy vehicle code
+
+|-
+| style="border:none;padding:0.0194in;"| &nbsp;
+| style="border:none;padding:0.0194in;"|
+	{|
+	| '''Type'''
+	| '''Description'''
+	|-
+	| 1
+	| General purpose lane
+	|-
+	| 2
+	| 2+ HOV lane
+	|-
+	| 3
+	| 3+ HOV lane
+	|}
 
 |-
 | style="border:none;padding:0.0194in;"| SPDLMT
@@ -120,7 +176,27 @@ Transportation network data are the basic descriptors of the available transport
 
 |-
 | style="border:none;padding:0.0194in;"| BNODE_CTL
-| style="border:none;padding:0.0194in;"| Intersection control at B-node0&nbsp;&nbsp;&nbsp; – No control1&nbsp;&nbsp;&nbsp; – Yield sign2&nbsp;&nbsp;&nbsp; – Stop sign3&nbsp;&nbsp;&nbsp; – Traffic signal
+| style="border:none;padding:0.0194in;"| Intersection control at B-node
+
+|-
+| style="border:none;padding:0.0194in;"| &nbsp;
+| style="border:none;padding:0.0194in;"|
+	{|
+	| '''Control'''
+	| '''Description'''
+	|-
+	| 0
+	| No control
+	|-
+	| 1
+	| Yield sign
+	|-
+	| 2
+	| Stop sign
+	|-
+	| 3
+	| Traffic signal
+	|}
 
 |-
 | style="border:none;padding:0.0194in;"| SCREENLINE
@@ -710,7 +786,7 @@ It is also worthwhile to build and plot selected paths through the transportatio
 Forecasting checks of input network data will need to be against most recent base year data.  The checks should be similar to those described under [[#Reasonableness and Sensitivity Testing|Reasonableness and Sensitivity Testing]].  Thematic maps (such as [[#Figure-f3-2|Figure 3.2]]) can be particularly useful when showing only the changes between the base and forecast years.  Any differences that appear on a map can be checked to ensure that they truly represent changes in the roadway network, such as highway upgrades or widenings, new roads, etc.  Lists of planned projects from sources such as the region's Transportation Improvement Program or Regional Transportation Plan can be used to ensure that any appropriate highway or transit network changes appear in the forecast year networks.
 
 === Network Skims and Path Building ===
-"Impedance" is used as a variable in model components such as trip distribution (discussed in [[Model_Validation_and_Reasonableness_Checking/Distribution|Chapter 6]]) and mode choice (discussed in [[Model_Validation_and_Reasonableness_Checking/ModeChoice|Chapter 7]]).  Impedance is a measure of the "cost" to travel between the origin and destination.  It is usually a combination of time, monetary cost, and distance related variables (generally referred to as "level of service" variables).  Impedance can range from a very simple measure, such as auto in-vehicle travel time, to a "composite impedance" measure, which can be a combination of time, cost, and distance variables by a variety of modes.  The choice of an appropriate impedance measure is critical in obtaining accurate models.  A simple measure may be sufficient for modeling trip distribution in a smaller modeled region where nearly all trips are made by automobile, but a more complex variable may be needed in mode choice models for regions with substantial use of alternative transportation modes.
+"Impedance" is used as a variable in model components such as trip distribution (discussed in [[Model_Validation_and_Reasonableness_Checking.Distribution|Chapter 6]]) and mode choice (discussed in [[Model_Validation_and_Reasonableness_Checking.Mode_Choice|Chapter 7]]).  Impedance is a measure of the "cost" to travel between the origin and destination.  It is usually a combination of time, monetary cost, and distance related variables (generally referred to as "level of service" variables).  Impedance can range from a very simple measure, such as auto in-vehicle travel time, to a "composite impedance" measure, which can be a combination of time, cost, and distance variables by a variety of modes.  The choice of an appropriate impedance measure is critical in obtaining accurate models.  A simple measure may be sufficient for modeling trip distribution in a smaller modeled region where nearly all trips are made by automobile, but a more complex variable may be needed in mode choice models for regions with substantial use of alternative transportation modes.
 
 Some impedance measures combine different level of service variables for the same mode (e.g., auto).  This is usually done through a linear combination of the component level of service variables, in the same way that utility functions are developed for mode choice models.  For example:
 
@@ -1011,4 +1087,4 @@ Issues with skim data discovered during the checks described in [[#Aggregate Che
 <div id="fn11">11&nbsp;Note that there may be several different rail modes in a region, such as commuter rail, subway/‌elevated, and light rail, that may be modeled separately in mode choice</div>
 <br />
 ----
-{{VandR.Navigation|Model_Validation_and_Reasonableness_Checking/ValidationPlan|Model_Validation_and_Reasonableness_Checking/SocioeconomicModels}}
+{{VandR.Navigation|Model_Validation_and_Reasonableness_Checking/Validation_Plan|Model_Validation_and_Reasonableness_Checking/Socioeconomic_Models}}

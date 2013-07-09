@@ -1,9 +1,10 @@
 {{Incubator}}
-{{VandR.Navigation|Model_Validation_and_Reasonableness_Checking/ModelInputs|Model_Validation_and_Reasonableness_Checking/AmountOfTravel}}
+{{VandR.Navigation|Model_Validation_and_Reasonableness_Checking/Model_Inputs|Model_Validation_and_Reasonableness_Checking/Amount_of_Travel}}
+
 === Socioeconomic Models ===
 __TOC__
 
-As discussed in [[Model_Validation_and_Reasonableness_Checking/ModelInputs|Chapter 3]], the main inputs to travel demand models are transportation network data and socioeconomic data. The socioeconomic data generally include employment by type and households classified by variables, such as numbers of persons, numbers of workers, income level, and/or numbers of vehicles. In aggregate models, these data are required to be identified for specific geographic subregions, typically TAZs, but in some models, may be required at a very disaggregate level such as parcels.
+As discussed in [[Model_Validation_and_Reasonableness_Checking/Model_Inputs|Chapter 3]], the main inputs to travel demand models are transportation network data and socioeconomic data. The socioeconomic data generally include employment by type and households classified by variables, such as numbers of persons, numbers of workers, income level, and/or numbers of vehicles. In aggregate models, these data are required to be identified for specific geographic subregions, typically TAZs, but in some models, may be required at a very disaggregate level such as parcels.
 
 In traditional trip-based travel models, socioeconomic models have frequently been incorporated in the trip generation step. Socioeconomic input data have typically included variables, such as numbers of households, population, or average household size, median income, and numbers of vehicles or average vehicles per household for each TAZ. The socioeconomic models have then allocated the input variables to the one-, two-, or three-dimensional cross-classification strata required for application of trip generation models for each TAZ in the modeled region. An example of the socioeconomic stratification is number of households by income group and household size.
 
@@ -932,10 +933,10 @@ The main forecast year checks for population synthesizers are comparisons of the
 
 Many population synthesizers do not derive forecast year synthetic populations directly from synthetic populations for earlier years. That is, the population synthesizer does not start from the earlier synthetic population and “age” the population based on the number of years between the earlier and forecast year and predict household formation and dissipation, births, deaths, and migration. Checking the consistency of the population from the base year to the forecast year is, therefore, critical. One way in which population synthesizers attempt to introduce more consistency is to use an existing synthetic population, for a base year or previously synthesized forecast year, in developing the seed distribution for the new forecast year.
 
-The control totals for various socioeconomic variables that are used as inputs to the population synthesizer are exogenous to the population synthesis process. These are, therefore, socioeconomic data inputs to the process and should be checked according to the process outlined in [[Model_Validation_and_Reasonableness_Checking/ModelInputs|Chapter 3]].
+The control totals for various socioeconomic variables that are used as inputs to the population synthesizer are exogenous to the population synthesis process. These are, therefore, socioeconomic data inputs to the process and should be checked according to the process outlined in [[Model_Validation_and_Reasonableness_Checking/Model_Inputs|Chapter 3]].
 <br />
 
 ----
 <div id="fn12">12</div>&nbsp;Bowman, J., and G. Rousseau, “Validation of Atlanta, Georgia, Regional Commission Population Synthesizer,” '''Innovations in Travel Demand Modeling, Summary of a Conference, Volume 2: Papers''', Transportation Research Board, Washington, D.C., 2008, pages 54-62.
 ----
-{{VandR.Navigation|Model_Validation_and_Reasonableness_Checking/ModelInputs|Model_Validation_and_Reasonableness_Checking/AmountOfTravel}}
+{{VandR.Navigation|Model_Validation_and_Reasonableness_Checking/Model_Inputs|Model_Validation_and_Reasonableness_Checking/Amount_of_Travel}}

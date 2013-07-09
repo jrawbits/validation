@@ -1,5 +1,5 @@
 {{Incubator}}
-{{VandR.Navigation|Model_Validation_and_Reasonableness_Checking/Introduction|Model_Validation_and_Reasonableness_Checking/ModelInputs}}
+{{VandR.Navigation|Model_Validation_and_Reasonableness_Checking/Introduction|Model_Validation_and_Reasonableness_Checking/Model_Inputs}}
 === Validation Plan Specification ===
 You've got to be very careful if you don't know where you are going, because you might not get there. ([[#fn5|5]])
 __TOC__
@@ -129,6 +129,6 @@ As shown in [[#Table-t2-1|Table 2.1]], almost 40 percent of an overall budget fo
 <div id="t21-a">a&nbsp;&nbsp; Percents do not sum to 100 due to rounding.</div>
 <br />
 ----
-<div id="fn5>5&nbsp;Yogi Berra, BrainyQuote.com, Xplore Inc, 2010, http://www.brainyquote.com/quotes/quotes/y/yogiberra124868.html, accessed April 21, 2010.</div>
+<div id="fn5">5&nbsp;Yogi Berra, BrainyQuote.com, Xplore Inc, 2010, http://www.brainyquote.com/quotes/quotes/y/yogiberra124868.html, accessed April 21, 2010.</div>
 ----
-{{VandR.Navigation|Model_Validation_and_Reasonableness_Checking/Introduction|Model_Validation_and_Reasonableness_Checking/ModelInputs}}
+{{VandR.Navigation|Model_Validation_and_Reasonableness_Checking/Introduction|Model_Validation_and_Reasonableness_Checking/Model_Inputs}}

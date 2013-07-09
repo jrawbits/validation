@@ -1,5 +1,5 @@
 {{Incubator}}
-{{VandR.Navigation|Model_Validation_and_Reasonableness_Checking/AmountOfTravel|Model_Validation_and_Reasonableness_Checking/ModeChoice}}
+{{VandR.Navigation|Model_Validation_and_Reasonableness_Checking/Amount_of_Travel|Model_Validation_and_Reasonableness_Checking/ModeChoice}}
 == 6.0 Trip Distribution/Destination Choice/Location Choice ==
 This chapter discusses the validation of model components related to destination choices, or the trip distribution step of four-step models. In activity-based models, relevant model components include regular workplace and school location models, tour-level (primary activity) destination choice models, and trip-level (intermediate stop) destination choice models. All of these types are referred to in this chapter as “trip distribution models.”
 
@@ -334,4 +334,4 @@ A valid use of K-factors may occur when it is necessary to “zero out” trips 
 
 <div id="fn20">20</div>&nbsp;Zone-level intrazonal percentages from the survey data set are not statistically significant in most cases.
 ----
-{{VandR.Navigation|Model_Validation_and_Reasonableness_Checking/AmountOfTravel|Model_Validation_and_Reasonableness_Checking/ModeChoice}}
+{{VandR.Navigation|Model_Validation_and_Reasonableness_Checking/Amount_of_Travel|Model_Validation_and_Reasonableness_Checking/ModeChoice}}
