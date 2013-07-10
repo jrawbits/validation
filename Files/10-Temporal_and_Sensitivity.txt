@@ -1,6 +1,7 @@
 {{Incubator}}
 {{VandR.Navigation|Model_Validation_and_Reasonableness_Checking/Assignment|Model_Validation_and_Reasonableness_Checking/Documentation}}
-=== Temporal Validation and Sensitivity Testing ===
+
+== Temporal Validation and Sensitivity Testing ==
 Temporal validations of travel models have been performed by many agencies as a matter of practice.&nbsp; Quite often, an existing travel model is applied for an updated base year to show that the model is still "valid."&nbsp; For example, a regional model may have been most recently estimated using data from a household travel survey collected in 1997.&nbsp; The model may have been validated against independent data collected for that purpose for the original base year, 1997.&nbsp; The agency maintaining the model might then "validate" the model against traffic and transit ridership data collected, say, every five years until a new household survey is collected.&nbsp; Thus, model system "validations" might exist for 2002 and 2007 with the next major data collection and model estimation scheduled for 2012.&nbsp; The 2002 and 2007 validations might include adjustments to the models to better reproduce observed traffic and transit ridership.
 
 Temporal validations such as the aforementioned are important for systemwide model validations, particularly if sufficient time or transportation system changes exist between the years selected for the validation.&nbsp; They may be necessary for maintaining credibility of the travel models with local officials or may be required by an MPO or state DOT.&nbsp; The periodic systemwide validations are often crucial for demonstrating the need to collect new travel survey data and estimate updated travel models.
@@ -16,13 +17,18 @@ Several definitions guide the concepts described in this chapter:
 
 Thus, if a model was calibrated using 1997 data, applications of the model for 2002 and 2007 would represent forecasts even though those years are now history.&nbsp; Comparisons of the forecasts for 2002 or 2007 against observed data such as traffic counts would be temporal validation tests.&nbsp; Likewise, if the model had been calibrated using 2007 data, applications of that model using the 1997 and 2002 data would represent backcasts, and comparisons to observed 1997 or 2002 data would also be temporal validation tests.
 
-=== 10.1  Temporal Validation ===
-==== 10.1.1   Timeline for Calibration and Temporal Validation ====
-Temporal validations should be performed when travel models are developed.&nbsp; [../FHWA-HEP-10-042/ch10.htm#f10-1 Figure 10.1] shows an example timeline for a model development process including the collection of travel survey data.&nbsp; As shown in [../FHWA-HEP-10-042/ch10.htm#f10-1 Figure 10.1], the time from the initiation of model development to model validation can easily be three years.&nbsp; As recommended in [../FHWA-HEP-10-042/ch2.htm Chapter 2], the development of a validation plan should take place in conjunction with the development of a model development plan.&nbsp; Based on the model validation plan, validation data would ideally be collected in parallel with the survey.&nbsp; However, with the short timeframe for data collection and model development shown in [../FHWA-HEP-10-042/ch10.htm#f10-1 Figure 10.1], a backcast would be the most likely procedure for temporal validation.
+=== Temporal Validation ===
+==== Timeline for Calibration and Temporal Validation ====
+Temporal validations should be performed when travel models are developed.&nbsp; [[#Figure10-1|Figure 10.1]] shows an example timeline for a model development process including the collection of travel survey data.&nbsp; As shown in [[#Figure10-1|Figure 10.1]], the time from the initiation of model development to model validation can easily be three years.&nbsp; As recommended in [[Model_Validation_and_Reasonableness_Checking/Validation_Plan|the Validation Plan Chapter]], the development of a validation plan should take place in conjunction with the development of a model development plan.&nbsp; Based on the model validation plan, validation data would ideally be collected in parallel with the survey.&nbsp; However, with the short timeframe for data collection and model development shown in [[Figure10-1|Figure 10.1]], a backcast would be the most likely procedure for temporal validation.
 
-There are, of course, many variations to the example shown in [../FHWA-HEP-10-042/ch10.htm#f10-1 Figure 10.1] that may compress or expand the timeline.&nbsp; More complicated data collection schemes, resource constraints, or extension of the model estimation and calibration might extend the timeline to, say, five or more years.&nbsp; In such a case, it might be possible to assemble some validation data toward the end of the timeline that would allow a temporal validation using a forecast to, say, the fifth or sixth year after the project initiation.
+There are, of course, many variations to the example shown in [[#Figure10-1|Figure 10.1]] that may compress or expand the timeline.&nbsp; More complicated data collection schemes, resource constraints, or extension of the model estimation and calibration might extend the timeline to, say, five or more years.&nbsp; In such a case, it might be possible to assemble some validation data toward the end of the timeline that would allow a temporal validation using a forecast to, say, the fifth or sixth year after the project initiation.
 
-A variation of the backcast/forecast option for model validation has been used by the Denver Regional Council of Governments (DRCOG).&nbsp; DRCOG performed several travel surveys between 1997 and 1999 and refreshed the various components of their trip-based travel models between 2000 and 2004.&nbsp; Development of an activity-based model using the 1997 household survey data was initiated in 2006.&nbsp; Since almost 10 years had elapsed between the initial data collection and the activity-based model development, DRCOG estimated the models using the 1997 data, calibrated the models to match 2005 conditions, and backcast to 1997 for temporal validation.Figure 10.1&nbsp;&nbsp; Example Timeline for Model Development[[Image:fig10-1.jpg]] ==== 10.1.2   Temporal Validation Data ====
+A variation of the backcast/forecast option for model validation has been used by the Denver Regional Council of Governments (DRCOG).&nbsp; DRCOG performed several travel surveys between 1997 and 1999 and refreshed the various components of their trip-based travel models between 2000 and 2004.&nbsp; Development of an activity-based model using the 1997 household survey data was initiated in 2006.&nbsp; Since almost 10 years had elapsed between the initial data collection and the activity-based model development, DRCOG estimated the models using the 1997 data, calibrated the models to match 2005 conditions, and backcast to 1997 for temporal validation.
+
+<div id="Figure10-1">[[File:VandR-Fig10-1.jpg|frame|none|'''Figure 10.1&nbsp;&nbsp; Example Timeline for Model Development]]</div>
+<br/>
+
+==== Temporal Validation Data ====
 Temporal validation tests are, of course, dependent upon data availability.&nbsp; Many temporal validations focus on matching traffic counts and transit boardings due to the general availability of those data.&nbsp; The validation tests are limited to those used for trip assignment validation or overall model system validation.&nbsp; While such validations are important and should be performed, they do not validate the various model components over time.&nbsp; Validating other model components require additional data to supplement traffic count and transit boarding data.
 
 ===== Sources of Backcast Validation Data =====
@@ -51,11 +57,10 @@ In some cases, new travel survey data may be available for model validation.&nbs
 ===== American Community Survey =====
 The initiation of the ACS provides the opportunity to perform forecast temporal validations.&nbsp; The decennial Census of Population and Housing collects data about the number of people residing in the United States and their relationship within a household, age, race, Hispanic origin (ethnicity), and sex.&nbsp; It also collects information about the number, occupancy status, and tenure (ownership status) of the nation’s housing units.&nbsp; In the censuses of 1980, 1990, and 2000, information about topics such as income, education, employment status, disability status, housing value, housing costs, and number of bedrooms were asked on the "long form."&nbsp; Since there is no long form associated with the censuses starting in 2010, data on these topics will come from the ACS.
 
-Instead of collecting data from about one in every six households once every 10 years, as with the decennial census long form, the ACS samples about one in every 40 addresses every year, or 250,000 addresses every month.&nbsp; This allows the Census Bureau to produce data every year rather than every decade.&nbsp; For areas with large populations (65,000 or more), survey estimates are based on 12 months of ACS data.&nbsp; For all areas with populations of 20,000 or more, the survey estimates are based on three years of ACS data.&nbsp; The Census Bureau is planning to produce estimates for all areas, down to the census tract and block group levels, based on five years of ACS data.&nbsp; The U.S. Census plans to release more ACS data each year as shown in [../FHWA-HEP-10-042/ch10.htm#t10-1 Table 10.1].
+Instead of collecting data from about one in every six households once every 10 years, as with the decennial census long form, the ACS samples about one in every 40 addresses every year, or 250,000 addresses every month.&nbsp; This allows the Census Bureau to produce data every year rather than every decade.&nbsp; For areas with large populations (65,000 or more), survey estimates are based on 12 months of ACS data.&nbsp; For all areas with populations of 20,000 or more, the survey estimates are based on three years of ACS data.&nbsp; The Census Bureau is planning to produce estimates for all areas, down to the census tract and block group levels, based on five years of ACS data.&nbsp; The U.S. Census plans to release more ACS data each year as shown in [[#Table-t10-1|Table 10.1]].
 
 
-<center>Table 10.1&nbsp;&nbsp;&nbsp;&nbsp; ACS Data Releases</center>
-
+<div id="Table-t10-1"><center>'''Table 10.1&nbsp; ACS Data Releases'''</center></div>
 
 {| style="border-spacing:0;"
 | style="border:none;padding:0.0194in;"| <center>'''Data Product'''</center>
@@ -89,7 +94,7 @@ Instead of collecting data from about one in every six households once every 10 
 
 |-
 | style="border:none;padding:0.0194in;"| 5-year Estimates
-| style="border:none;padding:0.0194in;"| All areas[../FHWA-HEP-10-042/ch10.htm#t10-1_a a]
+| style="border:none;padding:0.0194in;"| All areas ([[#t10-1_a|a]])
 | style="border:none;padding:0.0194in;"| –
 | style="border:none;padding:0.0194in;"| 2005-2009
 | style="border:none;padding:0.0194in;"| 2006-2010
@@ -97,9 +102,10 @@ Instead of collecting data from about one in every six households once every 10 
 | style="border:none;padding:0.0194in;"| 2008-2012
 
 |}
-Source:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; U.S. Census Bureau.
+Source:&nbsp; U.S. Census Bureau.
 
-a&nbsp;&nbsp; Five-year estimates will be available for areas as small as census tracts and block groups.
+<div id="t10-1_a">a&nbsp; Five-year estimates will be available for areas as small as census tracts and block groups.</div>
+<br/>
 
 The following are some of the data that may be useful for travel model validation available in the ACS:
 
@@ -126,12 +132,12 @@ The following are some of the data that may be useful for travel model validatio
 ** Normal departure time for work last week; and 
 ** Normal home-to-work journey time last week in minutes. 
 
-==== 10.1.3   Temporal Validation Tests ====
+==== Temporal Validation Tests ====
 Temporal validation tests will, of course, depend on the validation data available for the backcast or forecast year.&nbsp; While it may not be possible to test each of the model components for the backcast or forecast year, if the data are available, model component validation tests should be performed in addition to an overall system test comparing modeled to observed traffic counts and transit boardings.&nbsp; The model component tests can support the results of overall system tests.&nbsp; For example, if a reasonable match between modeled and observed trip generation rates for a backcast year can shown in addition to a reasonable match between modeled and observed traffic volumes, a "better" temporal validation can be claimed.&nbsp; Such results should provide more confidence in travel forecasts produced using the model.
 
 Results from temporal validation tests of model components based on survey data from two points in time are not likely to be as good as those for a typical model validation.&nbsp; The differences may be caused by differences in survey or sampling methods, random error associated with surveys, and changes in travel behavior over time (which the model may or may not be sensitive to).
 
-=== 10.2  Sensitivity Testing ===
+=== Sensitivity Testing ===
 Temporal validations such as forecasting or backcasting are important for systemwide model validations.&nbsp; However, if there are limited population, employment, land use, or transportation system changes between the calibration and validation years, the temporal validation will provide little information regarding the sensitivity of the model.
 
 Sensitivity testing can provide important information for model assessment.&nbsp; Sensitivity tests are not designed to tell whether the travel model is "correct" but, rather, to provide information about the overall behavior of the model.&nbsp; Sensitivity testing will help reduce unpleasant "surprises" that can occur when a forecast for a future year or an alternative does not produce expected results.&nbsp; A well structured sensitivity testing program provides travel modelers the opportunity to focus on the big picture of determining the overall reasonableness of the model in preparation for producing forecasts for specific studies.

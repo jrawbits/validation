@@ -1,6 +1,6 @@
 {{Incubator}}
-{{VandR.Navigation|Model_Validation_and_Reasonableness_Checking/ModeChoice|Model_Validation_and_Reasonableness_Checking/Assignment}}
-== 8.0 Time of Day ==
+{{VandR.Navigation|Model_Validation_and_Reasonableness_Checking/Mode_Choice|Model_Validation_and_Reasonableness_Checking/Assignment}}
+== Time of Day ==
 Many travel demand models have a time-of-day component.&nbsp; It is typical for models to start by estimating daily travel.&nbsp; In a four-step model, the trip generation model is typically applied to estimate average weekday trips.&nbsp; In an activity-based model, one of the first steps is typically a daily activity pattern model, also for weekdays.
 
 It is desirable for many reasons to estimate travel by time of day, including the need for temporally varying model outputs (for example, speeds by time of day for air quality conformity analysis) and to enhance model accuracy (shortest travel paths or transit service may vary between peak and off-peak periods).&nbsp; To do this, daily travel measures are converted to measures by time of day at some point in the modeling process.&nbsp; In most models, a discrete number of time periods are used.&nbsp; Typically, a four-step model with time-of-day modeling uses three to five periods (for example, a.m. peak, mid-day, p.m. peak, evening) while an activity-based model uses more periods, often an hour or half hour (or shorter) in length.
@@ -16,7 +16,7 @@ The specific definition usually makes little difference in the percentages of tr
 ==== Fixed Factor Methods ====
 The most common method of time-of-day modeling in four-step models is simple factoring.&nbsp; At some point in the modeling process, fixed factors specific to trip purpose and direction are applied to daily trips to obtain trips for each time period.&nbsp; While this method is relatively easy to implement and to apply, it is not sensitive to varying transportation levels of service, limiting its usefulness in analyzing policy changes or congestion management activities.
 
-The ways in which fixed time-of-day factors may be applied within the four-step process [../FHWA-HEP-10-042/ch8.htm#fn29 29] are:
+The ways in which fixed time-of-day factors may be applied within the four-step process[[#fn29|29]] are:
 
 * In '''pre-distribution''' application, the daily trips are factored between the trip generation and trip distribution steps of the model process.&nbsp; The data required include factors representing the percentage of trips by purpose during each hour and for each direction, production-to-attraction or attraction-to-production as well as directional split factors.&nbsp; It should be noted, however, that the directional split factors cannot be applied until after both ends of trips have been determined, i.e., after trip distribution.&nbsp; An advantage of this method is that differences in travel characteristics by time of day can be considered in both trip distribution and mode choice.&nbsp; In models with feedback loops, this method can provide a "clean" way to feed back travel times from one iteration to the next; trip distribution, mode choice, and trip assignment can be run separately for each time period, since the factors are applied prior to these steps.
 * In '''post-distribution''' application the factors are applied between the trip distribution and mode choice steps.&nbsp; The data required for this approach to splitting includes factors representing the percentage of trips by purpose during each period and for each direction, production-to-attraction or attraction-to-production.&nbsp; This process also provides an opportunity to consider that some trips are in the attraction-to-production direction and to use skims that reflect correct directionality.&nbsp; However, the modeler should decide whether the additional complexity introduced by doing so is worthwhile.
@@ -35,15 +35,18 @@ It is customary to express capacity as a highway network attribute in terms of v
 
 These conversion factors continue to be needed in models where time periods greater than one hour in length are used, but they convert the hourly capacity to the capacity for the appropriate time period.&nbsp; For example, if an a.m. peak period is defined as 6:00 a.m. to 9:00 a.m., the conversion factor will convert hourly capacity to capacity for the three hour period.&nbsp; It is still important to consider that travel is not uniformly distributed throughout the three hour period although it is likely to be more evenly distributed over a shorter time period, especially a peak period which is likely to be relatively congested throughout.&nbsp; The theoretical maximum for the factor is the number of hours in the period (three, in this example), and in a period where there is roughly uniform congestion throughout the peak period, the factor could be close to 3.&nbsp; Typical factors would range from 2 to 3.&nbsp; The factors for longer off-peak periods would likely be well lower than the theoretical maximum.
 
-=== 8.1   Sources of Data ===
-The basic data required for estimating time-of-day models of any type are household survey data, specifically the reported beginning and ending times of activities, tours, and trips. [../FHWA-HEP-10-042/ch8.htm#fn30 30]&nbsp; The survey data are processed for the specific type of model being estimated (fixed factor, logit, etc.) and are used separately by trip/tour purpose.&nbsp; These survey data (in expanded form) are also valuable for time-of-day model validation although, as is the case anytime when the estimation data set is used for validation, the data must be used with caution.
+=== Sources of Data ===
+The basic data required for estimating time-of-day models of any type are household survey data, specifically the reported beginning and ending times of activities, tours, and trips.[[#fn30|30]]&nbsp; The survey data are processed for the specific type of model being estimated (fixed factor, logit, etc.) and are used separately by trip/tour purpose.&nbsp; These survey data (in expanded form) are also valuable for time-of-day model validation although, as is the case anytime when the estimation data set is used for validation, the data must be used with caution.
 
 For areas without local household survey data, factors from other sources, such as the National Household Travel Survey (NHTS) or NCHRP Report 365 or its update may be transferred.&nbsp; However, as discussed below, time-of-day distributions vary significantly by area, and so significant checking is required when using transferred time-of-day data.
 
-Diurnal travel distributions are typically represented as percentages (for hours or shorter periods) of the total daily travel by purpose, perhaps by mode.&nbsp; [../FHWA-HEP-10-042/ch8.htm#f8-1 Figure 8.1] provides an example of diurnal distributions for three purposes:&nbsp; home-based work (HBW), home-based nonwork (HBNW), and nonhome-based (NHB).&nbsp; However, while distributions such as those shown in [../FHWA-HEP-10-042/ch8.htm#f8-1 Figure 8.1] are typical, they may vary significantly among urban areas that might be considered similar.&nbsp; [../FHWA-HEP-10-042/ch8.htm#t8-1 Table 8.1] shows the percentage of daily travel by purpose occurring during two periods – 7:00 to 9:00 a.m. and 3:00 to 6:00 p.m. – for nine urban areas with populations of approximately 1 million according to the 2000 U.S. Census.&nbsp; While the averages presented in this table, based on data from the 2001 NHTS, have associated statistical error ranges not presented here, it is clear that the percentages for some areas differ significantly from those for other areas.&nbsp; For example, the reported percentage of daily home-based work travel between 3:00 and 6:00 p.m. was nearly twice as high in Providence as in Memphis.Figure 8.1&nbsp;&nbsp;&nbsp; Example Diurnal Distribution of Trips by Trip Purpose for Large Urban Areas[[Image:fig8-1.jpg]] Source:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NCHRP Report 365.
+Diurnal travel distributions are typically represented as percentages (for hours or shorter periods) of the total daily travel by purpose, perhaps by mode.&nbsp; [[#Figure8-1|Figure 8.1]] provides an example of diurnal distributions for three purposes:&nbsp; home-based work (HBW), home-based nonwork (HBNW), and nonhome-based (NHB).&nbsp; However, while distributions such as those shown in [[#Figure8-1|Figure 8.1]] are typical, they may vary significantly among urban areas that might be considered similar.&nbsp; [[#Table-t8-1|Table 8.1]] shows the percentage of daily travel by purpose occurring during two periods – 7:00 to 9:00 a.m. and 3:00 to 6:00 p.m. – for nine urban areas with populations of approximately 1 million according to the 2000 U.S. Census.&nbsp; While the averages presented in this table, based on data from the 2001 NHTS, have associated statistical error ranges not presented here, it is clear that the percentages for some areas differ significantly from those for other areas.&nbsp; For example, the reported percentage of daily home-based work travel between 3:00 and 6:00 p.m. was nearly twice as high in Providence as in Memphis.
 
+<div id="Figure8-1">[[File:VandR-Fig8-1.jpg|frame|none|'''Figure 8.1&nbsp; Example Diurnal Distribution of Trips by Trip Purpose for Large Urban Areas''']]</div>
+Source:&nbsp; NCHRP Report 365.
+<br/>
 
-<center>Table 8.1&nbsp;&nbsp;&nbsp;&nbsp; Time-of-Day Percentages for Urban Areas of Approximately 1 Million in Population</center>
+<div id="Table-t8-1"><center>'''Table 8.1&nbsp; Time-of-Day Percentages for Urban Areas of Approximately 1 Million in Population'''</center></div>
 
 
 {| style="border-spacing:0;"
@@ -178,11 +181,11 @@ Source:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2001 National Household Travel Surve
 
 Besides survey data, the other main data source for validation of time-of-day models is traffic volume data by time of day.&nbsp; These data can be disaggregated for the periods used in the model and can provide estimates of total demand by time period.&nbsp; These data are useful for aggregate checks over all travel purposes (since the count data do not distinguish purposes).&nbsp; The most useful checks using traffic count data are those done following trip assignment.&nbsp; Transit ridership data provide a source for aggregate checks of the results of transit assignment by time of day.
 
-=== 8.2   Aggregate Checks ===
+=== Aggregate Checks ===
 The main aggregate checks for time-of-day models include person trip/activity percentages, traffic volume checks, transit boarding checks, and activity duration checks.
 
 ===== Person Trip/Activity Percentages =====
-Modeled percentages of person trips or activities by purpose and time period may be compared to observed percentages obtained from the expanded household survey data.&nbsp; This may be done by market segment to the extent segmentation is available in the model.&nbsp; For example, in all models, segmentation by geographic subarea is possible since the zones or parcels representing trip end locations can be aggregated.&nbsp; Geographic segmentation may use the same types of districts as used in trip distribution validation (see [../FHWA-HEP-10-042/ch6.htm#sect6-2-2 Section 6.2.2]).&nbsp; Another possible segmentation variable is income level.&nbsp; However, fixed time-of-day factors are usually not estimated separately by market segment.
+Modeled percentages of person trips or activities by purpose and time period may be compared to observed percentages obtained from the expanded household survey data.&nbsp; This may be done by market segment to the extent segmentation is available in the model.&nbsp; For example, in all models, segmentation by geographic subarea is possible since the zones or parcels representing trip end locations can be aggregated.&nbsp; Geographic segmentation may use the same types of districts as used in trip distribution validation (see [[Model_Validation_and_Reasonableness_Checking/Distribution#Aggregate Checks|Aggregate Checks (Distribution)]]).&nbsp; Another possible segmentation variable is income level.&nbsp; However, fixed time-of-day factors are usually not estimated separately by market segment.
 
 For activity-based models, this type of check is performed by tour or activity purpose and includes both primary activities and intermediate stops on tours.&nbsp; For tours, the checks should include comparisons of tour arrival times, departure times, and the combination of the two since they represent the alternatives in the model.
 
@@ -190,34 +193,34 @@ The logit time-of-day choice models used in activity-based models, which include
 
 It is worth discussing the use of data from the Census Transportation Planning Package (CTPP) in time-of-day model validation.&nbsp; The CTPP data are relevant only for the home-based work purpose.&nbsp; However, the American Community Survey (ACS), on which the CTPP data are based, asks, "What time did this person usually leave home to go to work LAST WEEK?"&nbsp; This differs from what a time-of-day model for home-based work travel simulates.&nbsp; For example, if every person in a particular market segment left for work at 7:00 a.m. four out of five times and at 8:00 a.m. the fifth time, the CTPP would record answers of 7:00 a.m. for all respondents, but the model would simulate 80 percent of the travelers leaving at 7:00 a.m. and 20 percent leaving at 8:00 a.m.&nbsp; It is also important to note that ACS records only about trips to work, not home from work, the latter of which are also included in home-based work trips in four-step models.&nbsp; This also means that the return times for work tours are not reported, and so the data are insufficient for validating tour-based time-of-day choice models.&nbsp; The CTPP/ACS data also do not distinguish between trips made directly between home and work and those made with stops, which are often treated as more than one trip in four-step models.&nbsp; Another important point to consider is that the ACS records departure time while the time-of-day model may measure arrival or midpoint time.
 
-National data sources such as NHTS should be used only as general guidelines for checks of time-of-day percentages for person trips.&nbsp; As the data in [../FHWA-HEP-10-042/ch8.htm#t8-1 Table 8.1] showed, there is significant variation in temporal distributions of travel even among urban areas of similar size, and so calibrating factors for a specific area to match national distributions may be inaccurate.
+National data sources such as NHTS should be used only as general guidelines for checks of time-of-day percentages for person trips.&nbsp; As the data in [[#Table-t8-1|Table 8.1]] showed, there is significant variation in temporal distributions of travel even among urban areas of similar size, and so calibrating factors for a specific area to match national distributions may be inaccurate.
 
 ===== Traffic Volume Checks =====
 Following trip assignment, another source of data becomes available for validation, namely traffic count data.&nbsp; Often, traffic count data are available at an hourly (or finer) level, which is usually less aggregate than the periods used in highway assignment.&nbsp; It is usually not difficult, therefore, to aggregate count data to match the time periods used in highway assignment.
 
-It is recommended that, even when highway assignment is done for separate time periods, the average daily assignment results (the sum of the assignment results for the various time periods) be validated and calibrated before any time-of-day validation is performed.&nbsp; Once the daily modeled volumes have been validated, the volumes by time period can be checked.&nbsp; While the values for the various guidelines may differ – for example, percentage root mean square errors would likely be higher for the lower peak period volumes than for daily volumes – the same basic checks performed for daily assignment results (see [../FHWA-HEP-10-042/ch9.htm#sect9-1 Section 9.1]) are performed for each time period for which assignment is run.
+It is recommended that, even when highway assignment is done for separate time periods, the average daily assignment results (the sum of the assignment results for the various time periods) be validated and calibrated before any time-of-day validation is performed.&nbsp; Once the daily modeled volumes have been validated, the volumes by time period can be checked.&nbsp; While the values for the various guidelines may differ – for example, percentage root mean square errors would likely be higher for the lower peak period volumes than for daily volumes – the same basic checks performed for daily assignment results (see [[Model_Validation_and_Reasonableness_Checking/Assignment#Traffic Assignment Checks|Traffic Assignment Checks]]) are performed for each time period for which assignment is run.
 
 Probably the first basic check for time-of-day assignments is total modeled vehicle miles traveled (VMT) by time period compared to observed VMT.&nbsp; Assuming the daily assignment results have already been validated, it is easy to compare the percentage of daily modeled VMT occurring during each period to the observed percentages.&nbsp; Other assignment checks that can be performed by time period include screenline volume checks and checks of volumes on key roadways.
 
 ===== Transit Boarding Checks =====
-In a model with significant transit demand and a time-of-day model component, it is important to check the transit assignment results by time-of-day.&nbsp; This is done by comparing the modeled unlinked transit trips by time period to observed boardings by time period.&nbsp; Naturally, this assumes that transit ridership information by time-of-day is available.&nbsp; As is the case with highway trips, it is best to first validate the daily transit assignment (as described in [../FHWA-HEP-10-042/ch9.htm#sect9-2 Section 9.2]) before validating the transit assignment by time period.&nbsp; The level of aggregation of transit routes for validation can be the same for time-of-day assignments as for daily assignments.
+In a model with significant transit demand and a time-of-day model component, it is important to check the transit assignment results by time-of-day.&nbsp; This is done by comparing the modeled unlinked transit trips by time period to observed boardings by time period.&nbsp; Naturally, this assumes that transit ridership information by time-of-day is available.&nbsp; As is the case with highway trips, it is best to first validate the daily transit assignment (as described in [[Model_Validation_and_Reasonableness_Checking/Assignment#Transit Assignment Checks|Transit Assignment Checks]]) before validating the transit assignment by time period.&nbsp; The level of aggregation of transit routes for validation can be the same for time-of-day assignments as for daily assignments.
 
 ===== Activity Duration Checks =====
 For activity-based models, the activity durations are implied by the modeled activity start and end times, or arrival and departure times.&nbsp; These implied activity durations can be compared to the actual activity durations from the household survey data on an aggregate basis.&nbsp; For example, the modeled versus observed activity durations can be compared by activity purpose, demographic segment, and/or geographic segment, depending on data availability.&nbsp; This can be done for both primary activities and activities occurring at intermediate stops on tours.
 
-=== 8.3   Disaggregate Checks ===
+=== Disaggregate Checks ===
 Disaggregate time-of-day model checks can be performed only for the logit time-of-day choice models usually associated with activity-based models.&nbsp; Fixed factor methods are aggregate and cannot be checked disaggregately.
 
-As discussed in [../FHWA-HEP-10-042/ch6.htm#sect6-2-3 Section 6.2.3], logit models are disaggregately estimated, and therefore disaggregate validation is needed for logit time-of-day choice models, along with the aggregate checks described above.&nbsp; Most urban area household travel surveys have such small sample sizes that the entire data set is needed for model estimation.&nbsp; In most cases, therefore, there is no independent model estimation data set available for validation.
+As discussed in [[Model_Validation_and_Reasonableness_Checking/Mode_Choice#Disaggregate Checks (Mode Choice)|Disaggregate Checks (Mode Choice)]], logit models are disaggregately estimated, and therefore disaggregate validation is needed for logit time-of-day choice models, along with the aggregate checks described above.&nbsp; Most urban area household travel surveys have such small sample sizes that the entire data set is needed for model estimation.&nbsp; In most cases, therefore, there is no independent model estimation data set available for validation.
 
 Limited disaggregate validation can be performed using the same data set used for model estimation, but reporting the results by market segment, using the "apply" function in the logit model estimation software.&nbsp; A logit time-of-day choice model could be applied to the data set used for estimation but the results may be reported by, for example, worker status.&nbsp; It might be found, for example, that the model inaccurately estimates peak period shopping trips for part-time workers.
 
-=== 8.4   Criteria Guidelines ===
+=== Criteria Guidelines ===
 While it is not difficult to statistically estimate error ranges or confidence intervals for time-of-day percentages, these values would vary significantly based on survey sample sizes and trip/activity purpose definitions.&nbsp; It would be possible, though, to compute such intervals and determine whether modeled time-of-day percentages fall within an acceptable range (say a 90- percent confidence interval).&nbsp; This has not been done often in practice, perhaps in part because in many cases the confidence intervals would be so large as to be essentially meaningless.&nbsp; A similar issue arises for the comparison of modeled time percentages from assignment results to traffic or transit ridership counts.&nbsp; The error ranges for an individual traffic count can be quite high compared to the value of the count itself.
 
-Because there is no standard practice, no specific criteria guidelines for the aggregate checks described in [../FHWA-HEP-10-042/ch8.htm#sect8-3 Section 8.3] are presented.&nbsp; The modeler must judge whether the modeled percentages are "close enough," based on the statistical validity of the observed data and the need for accuracy in model results.
+Because there is no standard practice, no specific criteria guidelines for the aggregate checks described in [[#Disaggregate Checks|Disaggregate Checks]] are presented.&nbsp; The modeler must judge whether the modeled percentages are "close enough," based on the statistical validity of the observed data and the need for accuracy in model results.
 
-=== 8.5   Reasonableness and Sensitivity Testing ===
+=== Reasonableness and Sensitivity Testing ===
 Some reasonableness checks for time-of-day models can be done.&nbsp; It is logical for home-based work trips to have pronounced morning and evening peaks and for nonhome-based trips to have a mid-day peak.&nbsp; When time-of-day factors or models are applied, the resulting split of home-based production-to-attraction trips and attraction-to-production trips should be even.&nbsp; It might be reasonable, however, for the trips for individual home-based trip purposes to differ from a 50-50 split between directions.&nbsp; For example, in most cases, there are more stops made on the way home from work, implying that there are likely more production-to-attraction trips than attraction-to-production trips.&nbsp; However, this should be offset by a greater number of attraction-to-production trips for other home-based trip purposes.
 
 Sensitivity testing is not relevant for fixed factor models, which, by their use of fixed factors, are insensitive to variables related to transportation level of service or household or person demographics.&nbsp; Sensitivity testing can be performed for time-of-day choice models by varying model inputs and checking results for reasonableness.&nbsp; Model inputs that can be varied include level of service variables used in the model (e.g., distance, delay) and demographic variables.&nbsp; Some example tests include:
@@ -227,12 +230,10 @@ Sensitivity testing is not relevant for fixed factor models, which, by their use
 
 Due to a lack of experience, developing specific criteria guidelines for expected changes in temporal distribution patterns based on changes in input variables is difficult.&nbsp; Once again, it is up to the experienced planner to determine whether the modeled changes are reasonable.
 
-=== 8.6   Troubleshooting Strategies ===
-[../FHWA-HEP-10-042/ch8.htm#t8-2 Table 8.2] summarizes some of the issues that might be discovered during the validation checks described above and potential strategies to address them.
+=== Troubleshooting Strategies ===
+[[#Table-t8-2|Table 8.2]] summarizes some of the issues that might be discovered during the validation checks described above and potential strategies to address them.
 
-
-<center>Table 8.2&nbsp;&nbsp;&nbsp;&nbsp; Troubleshooting Strategies for Issues with Time-of-Day Model Results</center>
-
+<div id="Table-t8-2"><center>'''Table 8.2&nbsp; Troubleshooting Strategies for Issues with Time-of-Day Model Results'''</center></div>
 
 {| style="border-spacing:0;"
 | style="border:none;padding:0.0194in;"| <center>'''Issue'''</center>
@@ -240,30 +241,27 @@ Due to a lack of experience, developing specific criteria guidelines for expecte
 
 |-
 | style="border:none;padding:0.0194in;"| 1. Modeled percentages of trips by purpose and time period poorly match observed survey data
-| style="border:none;padding:0.0194in;"| * For fixed factor models, recheck factor application in the model 
+| style="border:none;padding:0.0194in;"|
+* For fixed factor models, recheck factor application in the model 
 * Check for consistency between application data (trip tables) and estimation data (survey) 
 * For time-of-day choice models, recalibrate time period constants 
 
-
-
 |-
 | style="border:none;padding:0.0194in;"| 2. Modeled percentages of assigned trips by time period poorly match independent observed data (traffic/transit counts)
-| style="border:none;padding:0.0194in;"| * For fixed factor models, consider revising factors to achieve a better match 
+| style="border:none;padding:0.0194in;"|
+* For fixed factor models, consider revising factors to achieve a better match 
 * For time-of-day choice models, if issues are regionwide, consider recalibrating time period constants or other parameters 
 * For time-of-day choice models, if issues are mode-specific, consider revisions to mode-specific parameters 
 
-
-
 |-
 | style="border:none;padding:0.0194in;"| 3. Model results by geography or socioeconomic strata differ from percentages based on expanded household survey data
-| style="border:none;padding:0.0194in;"| * For fixed factor models, consider whether factors could be varied by geography or other appropriate market segment 
+| style="border:none;padding:0.0194in;"|
+* For fixed factor models, consider whether factors could be varied by geography or other appropriate market segment 
 * For time-of-day choice models, consider adding segmentation variables or calibrating coefficients for existing variables 
-
-
-
 |}
-=== 8.7   Forecasting Checks ===
-The basic forecasting checks for time-of-day models are comparisons between percentages of travel by time of day between the base and forecast years.&nbsp; All of the checks discussed in [../FHWA-HEP-10-042/ch8.htm#sect8-2 Section 8.2] can be performed comparing the base and forecast year scenarios.
+
+=== Forecasting Checks ===
+The basic forecasting checks for time-of-day models are comparisons between percentages of travel by time of day between the base and forecast years.&nbsp; All of the checks discussed in [[#Aggregate Checks|Aggregate Checks]] can be performed comparing the base and forecast year scenarios.
 
 The comparisons are not likely to show much useful information for fixed factor models.&nbsp; The percentages of person trips by purpose for each time period are fixed and therefore must be equal for all scenarios.&nbsp; The percentages of total travel across purposes, including person trips and assigned vehicle and transit trips, may vary between the base and forecast years since the distribution of daily trips among trip purposes may differ, due to land use and demographic changes.&nbsp; These differences in the temporal distribution of overall travel can be checked for reasonableness, but the differences are likely to be small.
 
@@ -273,8 +271,8 @@ For time-of-day choice models, the aggregate checks discussed above (for tours a
 <br />
 
 ----
-29 Time-of-Day Modeling Procedures State-of-the-Art, State-of-the-Practice, TMIP, U.S. Department of Transportation, October 1997, Page ES-3.
+<div id="fn29">29&nbsp;Time-of-Day Modeling Procedures State-of-the-Art, State-of-the-Practice, TMIP, U.S. Department of Transportation, October 1997, Page ES-3.</div>
 
-30 An exception is for post-assignment techniques, where diurnal distributions of traffic volumes and/or transit riders by time of day are used.
+<div id="fn30">30&nbsp;An exception is for post-assignment techniques, where diurnal distributions of traffic volumes and/or transit riders by time of day are used.</div>
 ----
-{{VandR.Navigation|Model_Validation_and_Reasonableness_Checking/ModeChoice|Model_Validation_and_Reasonableness_Checking/Assignment}}
+{{VandR.Navigation|Model_Validation_and_Reasonableness_Checking/Mode_Choice|Model_Validation_and_Reasonableness_Checking/Assignment}}

@@ -20,12 +20,7 @@ Friction factors are used in the gravity model to represent the effects of trave
 
 ''F'' = ''a'' &times; ''t''<sup>b</sup> &times; '''e'''<sup>''ct''</sup>
 
-Where:
-
-* ''F'' = Friction factor;
-* ''t'' = travel impedance (usually time in minutes);
-* ''a'',''b'', ''c'' = model parameters; and
-* '''e''' = base of natural logarithms.
+Where ''F'' is the friction factor; ''t'' is the travel impedance (usually time in minutes); ''a'',''b'', ''c'' are model parameters; and '''e''' is the base of natural logarithms.
 
 The gamma function reduces to two other commonly used functions for friction factors when either the b or c parameter is estimated to be zero. Specifically, the function reduces to the exponential function when the b parameter is zero, and to the power function when the c parameter is zero. As will be discussed below, both the b and c parameters should typically be negative (if nonzero), producing either a negative exponential function when the b parameter is zero or the inverse power function when the c parameter is zero.
 
@@ -125,9 +120,9 @@ Note that the gamma function parameters shown in these examples were calibrated 
 
 These parameters and graphs are provided as examples and are not intended to provide recommended or transferable friction factors. Differences in urban area geography and other characteristics make it difficult to determine “correct” friction factors for any particular context.
 
-<div id="Figure6-1">[[File:VandR-Fig6-1.jpg|frame|none|'''Example Home-Based Work Friction Factors Based on Gamma Function''']]</div>
-<div id="Figure6-2">[[File:VandR-Fig6-2.jpg|frame|none|'''Example Home-Based Nonwork Friction Factors Based on Gamma Function''']]</div>
-<div id="Figure6-3">[[File:VandR-Fig6-3.jpg|frame|none|'''Example Nonhome-Based Friction Factors Based on Gamma Function''']]</div>
+<div id="Figure6-1">[[File:VandR-Fig6-1.jpg|frame|none|'''Figure 6.1: Example Home-Based Work Friction Factors Based on Gamma Function''']]</div>
+<div id="Figure6-2">[[File:VandR-Fig6-2.jpg|frame|none|'''Figure 6.2: Example Home-Based Nonwork Friction Factors Based on Gamma Function''']]</div>
+<div id="Figure6-3">[[File:VandR-Fig6-3.jpg|frame|none|'''Figure 6.3: Example Nonhome-Based Friction Factors Based on Gamma Function''']]</div>
 
 ==== Disaggregate Checks ====
 There are no applicable disaggregate checks friction factors.
@@ -150,8 +145,9 @@ Reasonableness checks have been presented as part of the aggregate checks presen
 | style="border:none;padding:0.0194in;"| <center>'''Potential Troubleshooting Strategies'''</center>
 
 |-
-| style="border:none;padding:0.0194in;"| 1. Friction factors do not monotonically decrease from a peak occurring at a very short travel time
-| style="border:none;padding:0.0194in;"| * Check parameters of friction factor formula (e.g., gamma function) 
+| style="border:none;padding:0.0194in;"| Friction factors do not monotonically decrease from a peak occurring at a very short travel time
+| style="border:none;padding:0.0194in;"|
+* Check parameters of friction factor formula (e.g., gamma function) 
 * Check friction factor pattern for match with observed trip length frequency 
 * Check to ensure that “smoothed” observed data pattern is monotonically decreasing 
 
@@ -199,21 +195,20 @@ A more rigorous way of checking trip length frequency distributions is through t
 
 The procedure to calculate the coincidence of distributions is as follows:
 
-* [[Image:eq6-2.jpg]]
+<div id="Equation6-2">[[File:VandR-Eq6-2.jpg|frame|none]]</div>
 
-where:
+where ''CR'' is the Coincidence Ratio; ''PM<sub>T</sub>'' is the proportion of modeled distribution in interval ''T''; ''PO<sub>T</sub>'' is the proportion of observed distribution in interval ''T''; and ''T'' is the histogram interval for time, distance, or other impedance measure (e.g., 0-4.9 minutes, 5.0-9.9 minutes, etc.)
 
-* CR = Coincidence Ratio
-* PMT = Proportion of modeled distribution in interval T
-* POT = Proportion of observed distribution in interval T
-* T = Histogram interval for time, distance, or other impedance measure (e.g., 0-4.9 minutes, 5.0-9.9 minutes…)
+The coincidence ratio lies between 0 and 1.0, where a ratio of 1.0 indicates identical distributions. [[#Figure6-4|Figure 6.4]] shows an example application of the coincidence ratio.
 
-The coincidence ratio lies between 0 and 1.0, where a ratio of 1.0 indicates identical distributions. [../FHWA-HEP-10-042/ch6.htm#f6-4 Figure 6.4] shows an example application of the coincidence ratio.Figure 6.4 Coincidence Ratio[[Image:fig6-4.jpg]] Note: ATL = Average Trip Length.
+<div id="Figure6-4">[[File:VandR-Fig6-4.jpg|frame|none|'''Figure 6.4 Coincidence Ratio]]</div>
+Note: ATL = Average Trip Length.
+<br/>
 
 ===== Origin-Destination Pattern Checks =====
 As discussed previously, it is impossible to estimate a statistically valid origin-destination trip table at the zone interchange level by expanding household surveys with typical sample sizes. It is therefore necessary to check origin-destination patterns at a more aggregate level. Generally, this is described as a ''district''-level validation. The ideal number of districts is dependent on many factors, including the size of the modeled region, the number of zones, the amount of travel, the existence of political boundaries and travel barriers such as rivers, and the amount of market segmentation for which district-level analysis will be performed.
 
-In most urban area models, the central business district is analyzed as a separate district or group of districts. It is also good practice to keep major political entities (states, counties, and large cities) in separate districts wherever possible. Many types of trips (e.g., school trips) can be affected by these political boundaries. Significant travel barriers, including major rivers or rail corridors with limited crossing opportunities, make good district boundaries. It may also make sense to align district boundaries with screenline or cutline locations (see [../FHWA-HEP-10-042/ch9.htm#sect9-1 Section 9.1]) to better use information from highway assignment in validation of travel patterns.
+In most urban area models, the central business district is analyzed as a separate district or group of districts. It is also good practice to keep major political entities (states, counties, and large cities) in separate districts wherever possible. Many types of trips (e.g., school trips) can be affected by these political boundaries. Significant travel barriers, including major rivers or rail corridors with limited crossing opportunities, make good district boundaries. It may also make sense to align district boundaries with screenline or cutline locations (see [[Model_Validation_and_Reasonableness_Checking/Assignment#Traffic Assignment Checks|Traffic Assignment Checks (Assignment)]]) to better use information from highway assignment in validation of travel patterns.
 
 As with other checks, district-level geographic checks should be performed separately for each trip or activity purpose. Additional market segmentation, such as by income level, should also be performed where the observed data exist and the model supports such segmentation.
 
@@ -230,21 +225,28 @@ An orientation ratio with a value of less than 1.0 indicates that the production
 
 The orientation ratio can be useful for understanding the reasonableness of modeled distributions. If modeled distributions for selected areas are compared to observed distributions for validation purposes, the checks should be performed on a district basis due to the inherent sampling error associated with household surveys. As a district-level validation check, the observed and modeled orientation ratios can be calculated for each district-to-district interchange. Then, the ratios of the modeled to observed district-level orientation ratios can be estimated. The closer the ratios are to 1.0, the better the model is reproducing observed orientations. Likewise, the differences between the modeled and observed orientation ratios can be checked. Differences close to zero imply better reproduction of observed trip orientations.
 
-Plots of orientation ratios can also be used to qualitatively check trip distribution results. [../FHWA-HEP-10-042/ch6.htm#f6-5 Figure 6.5] shows an example of modeled and observed orientation ratios estimated on a zonal basis (for the productions) to an attraction district (the CBD). The calculated ratios have been plotted. The results shown in [../FHWA-HEP-10-042/ch6.htm#f6-5 Figure 6.5] suggest that there might be too much modeled travel from the eastern part of the region to the CBD. The observed results in [../FHWA-HEP-10-042/ch6.htm#f6-5 Figure 6.5] also show the difficulty with using travel survey data on a zonal level. Aggregation of the modeled and observed results shown in [../FHWA-HEP-10-042/ch6.htm#f6-5 Figure 6.5] to a district-level structure might provide a clearer picture of differences in the modeled and observed orientations of trips to the CBD for this example.
+Plots of orientation ratios can also be used to qualitatively check trip distribution results. [[#Figure6-5|Figure 6.5]] shows an example of modeled and observed orientation ratios estimated on a zonal basis (for the productions) to an attraction district (the CBD). The calculated ratios have been plotted. The results shown in [[#Figure6-5|Figure 6.5]] suggest that there might be too much modeled travel from the eastern part of the region to the CBD. The observed results in [[#Figure6-5|Figure 6.5]] also show the difficulty with using travel survey data on a zonal level. Aggregation of the modeled and observed results shown in [[#Figure6-5|Figure 6.5]] to a district-level structure might provide a clearer picture of differences in the modeled and observed orientations of trips to the CBD for this example.
 
-Another geographic check of travel patterns is the amount of intrazonal travel. This depends greatly on the definition of zones and the level of detail of the model. The modeled percentage of intrazonal trips should be compared to the observed percentage of intrazonal travel from the expanded household survey. These checks should be done separately by trip purpose and market segment and may also be done at the district level. [../FHWA-HEP-10-042/ch6.htm#fn20 20]
+Another geographic check of travel patterns is the amount of intrazonal travel. This depends greatly on the definition of zones and the level of detail of the model. The modeled percentage of intrazonal trips should be compared to the observed percentage of intrazonal travel from the expanded household survey. These checks should be done separately by trip purpose and market segment and may also be done at the district level.[[#fn20|20]]
 
 ==== Disaggregate Checks ====
 Since the gravity model is an aggregate formulation, there are no applicable disaggregate checks. Logit models are disaggregately estimated (one record per trip/activity), and therefore disaggregate validation is needed for logit destination choice models, along with the aggregate checks described above.
 
 Ideally, disaggregate validation of a model should be performed using a data set that is independent of the data set used for model estimation. For example, a survey data set might be divided in half, with one half used for model estimation and the other for model validation. As a practical matter, however, most urban area household travel surveys have such small sample sizes that the entire data set is needed for model estimation. In most cases, therefore, there is no independent model estimation data set available for validation.
 
-Limited disaggregate validation can be performed using the same data set used for model estimation, but reporting the results by market segment. Logit model estimation software has the capability to apply the estimated model to a data set in the same form as the estimation data set. For example, a logit destination choice model could be applied to the data set used for estimation but the results may be reported by vehicle availability level. It might be found, for example, that zones in the CBD are not being chosen often enough in the model for households with zero vehicles.Figure 6.5 Example Orientation Ratio GIS Maps[[Image:fig6-5.jpg]] Source: “''Shining a Light Inside the Black Box'',” TMIP webinar, March 11, 2008.Note: This figure is not critical in understanding the concept of orientation maps.
+Limited disaggregate validation can be performed using the same data set used for model estimation, but reporting the results by market segment. Logit model estimation software has the capability to apply the estimated model to a data set in the same form as the estimation data set. For example, a logit destination choice model could be applied to the data set used for estimation but the results may be reported by vehicle availability level. It might be found, for example, that zones in the CBD are not being chosen often enough in the model for households with zero vehicles.
+
+<div id="Figure6-5">[[File:VandR-Fig6-5.jpg|frame|none|'''Figure 6.5 Example Orientation Ratio GIS Maps''']]
+Source: ''Shining a Light Inside the Black Box'', TMIP webinar, March 11, 2008.
+<br/>
+Note: This figure is not critical in understanding the concept of orientation maps.
+</div>
+<br/>
 
 While it is good practice to perform disaggregate validation of logit destination choice models, it is often difficult to use the results. Since a destination choice model usually consists of zones, there are hundreds or thousands of alternatives, making the reports of the model application very long and time consuming to analyze. Furthermore, as discussed above, typically household survey sample sizes do not have large enough sample sizes to analyze results at the zone level. While disaggregate validation is a useful tool to identify systematic biases in the estimated models, there are often aggregate tests that are more practical. For example, model application results could be segmented by trip length category, but the aggregate trip length checks described in [../FHWA-HEP-10-042/ch6.htm#sect6-2-2 Section 6.2.2] provide a much easier way of identifying whether modeled trip lengths are accurate.
 
 ==== Criteria Guidelines ====
-The guidelines presented in this chapter are intended for use with the comparisons of base year modeled results to observed data shown in [../FHWA-HEP-10-042/ch6.htm#sect6-2-2 Section 6.2.2]. As with criteria guidelines throughout the validation process, the figures presented in this chapter are guidelines and are not to be interpreted as absolute standards. Meeting every guideline does not ensure a validated model, nor does missing a guideline imply that the model is not validated.
+The guidelines presented in this chapter are intended for use with the comparisons of base year modeled results to observed data shown in [[#Aggregate Checks|Aggregate Checks]]. As with criteria guidelines throughout the validation process, the figures presented in this chapter are guidelines and are not to be interpreted as absolute standards. Meeting every guideline does not ensure a validated model, nor does missing a guideline imply that the model is not validated.
 
 Average trip lengths – Generally, the modeled average trip lengths for each trip purpose should be within five percent of observed for each trip purpose. In models with many trip purposes, some purposes may have relatively few trips, and so the five percent guideline can be relaxed in these cases.
 
@@ -252,10 +254,10 @@ Coincidence ratios – It is preferable for the coincidence ratio for each trip 
 
 Intrazonal trip percentages – Some models have used guidelines where regionwide intrazonal trip percentages should be within three percentage points of observed for each trip purpose. For example, if a trip purpose had an observed intrazonal trip percentage of seven percent, the modeled percentage should be between 4 and 10 percent.
 
-Orientation ratios – Orientation ratios are a relatively new measure and, as a result, no guidelines have been set. However, as described in [../FHWA-HEP-10-042/ch6.htm#sect6-2-2 Section 6.2.2], if the ratios of modeled to observed orientation ratios are calculated, values closer to 1.0 imply a better match of the modeled distribution to the observed distribution. Likewise, if the differences between the ratio are calculated, values closer to zero imply a better match of modeled to observed distributions.
+Orientation ratios – Orientation ratios are a relatively new measure and, as a result, no guidelines have been set. However, as described in [[#Aggregate Checks|Aggregate Checks]], if the ratios of modeled to observed orientation ratios are calculated, values closer to 1.0 imply a better match of the modeled distribution to the observed distribution. Likewise, if the differences between the ratio are calculated, values closer to zero imply a better match of modeled to observed distributions.
 
 ==== Reasonableness and Sensitivity Testing ====
-The reasonableness checks for trip distribution models are mainly the aggregate checks presented in [../FHWA-HEP-10-042/ch6.htm#sect6-2-2 Section 6.2.2].
+The reasonableness checks for trip distribution models are mainly the aggregate checks presented in [[#Aggregate Checks|Aggregate Checks]].
 
 Sensitivity testing can be performed for trip distribution models by varying model inputs and checking results for reasonableness. Model inputs that can be varied include level of service variables used in the trip distribution model (time/speed and cost) and the level of activity/number of trips in different parts of the region. Some example tests include the following:
 
@@ -271,16 +273,14 @@ Due to a lack of experience with sensitivity testing for trip distribution model
 ===== Scenario Comparison =====
 For scenarios where there are no observed data for comparison, model results must be checked by comparing them to another previously validated scenario such as the validated base year scenario, another forecast scenario, or a “no build” scenario associated with the alternative policy/project scenario.
 
-All of the checks listed previously in [../FHWA-HEP-10-042/ch6.htm#sect6-2-2 Section 6.2.2] can be used for these comparisons, including average trip lengths and trip length frequencies, district-level origin-destination flows, and orientation ratios. Orientation ratios can provide a good reasonableness and sensitivity check. Similar plots to those shown in [../FHWA-HEP-10-042/ch6.htm#f6-5 Figure 6.5] could be produced for trip distributions performed for base and alternative scenarios. Resulting changes in orientation ratios should be visible in a comparison of the plots.
+All of the checks listed previously in [[#Aggregate Checks|Aggregate Checks]] can be used for these comparisons, including average trip lengths and trip length frequencies, district-level origin-destination flows, and orientation ratios. Orientation ratios can provide a good reasonableness and sensitivity check. Similar plots to those shown in [[#Figure6-5|Figure 6.5]] could be produced for trip distributions performed for base and alternative scenarios. Resulting changes in orientation ratios should be visible in a comparison of the plots.
 
 The purpose of these comparisons is not to match the model results with those from the comparison scenario, but rather to determine whether the differences are reasonable. It is therefore important that those performing these checks include persons with knowledge of the modeled region as well as the models themselves.
 
 ==== Troubleshooting Strategies ====
-Issues discovered during the model checks described in Sections [../FHWA-HEP-10-042/ch6.htm#sect6-2-2 6.2.2], [../FHWA-HEP-10-042/ch6.htm#sect6-2-3 6.2.3], and [../FHWA-HEP-10-042/ch6.htm#sect6-2-5 6.2.5] may imply errors in trip distribution model parameters or input data (networks/skims or trip ends). [../FHWA-HEP-10-042/ch6.htm#t6-3 Table 6.3] shows some of the typical problems that may be evident from these tests. Because it is a critical topic, one strategy, the use of K-factors, is discussed in more detail at the end of this chapter.
+Issues discovered during the model checks described in Sections [[#Aggregate Checks|Aggregate Checks]], [[#Disaggregate Checks|Disaggregate Checks]], and [[#Reasonableness and Sensitivity Testing|Reasonableness and Sensitivity Testing]] may imply errors in trip distribution model parameters or input data (networks/skims or trip ends). [[#Table-t6-3|Table 6.3]] shows some of the typical problems that may be evident from these tests. Because it is a critical topic, one strategy, the use of K-factors, is discussed in more detail at the end of this chapter.
 
-
-<center>Table 6.3 Troubleshooting Strategies for Issues with Trip Distribution Model Results</center>
-
+<div id="Table-t6-3"><center>'''Table 6.3 Troubleshooting Strategies for Issues with Trip Distribution Model Results'''</center></div>
 
 {| style="border-spacing:0;"
 | style="border:none;padding:0.0194in;"| <center>'''Issue'''</center>
@@ -288,40 +288,36 @@ Issues discovered during the model checks described in Sections [../FHWA-HEP-10-
 
 |-
 | style="border:none;padding:0.0194in;"| 1. Average trip lengths too long or short
-| style="border:none;padding:0.0194in;"| * Recalibrate friction factors or adjust parameters of friction factor formula or logit utility equations 
+| style="border:none;padding:0.0194in;"|
+* Recalibrate friction factors or adjust parameters of friction factor formula or logit utility equations 
 * Recheck skim data and trip end inputs 
 * Check distribution patterns (see below) 
 
-
-
 |-
 | style="border:none;padding:0.0194in;"| 2. Coincidence ratio too low
-| style="border:none;padding:0.0194in;"| * Recalibrate friction factors or adjust parameters of friction factor formula or logit utility equations 
-
-
+| style="border:none;padding:0.0194in;"|
+* Recalibrate friction factors or adjust parameters of friction factor formula or logit utility equations 
 
 |-
 | style="border:none;padding:0.0194in;"| 3. District-level origin-destination patterns inaccurate for some interchanges
-| style="border:none;padding:0.0194in;"| * Check trip lengths (see above) 
+| style="border:none;padding:0.0194in;"|
+* Check trip lengths (see above) 
 * Check travel impedances between affected districts 
 * Introduce or adjust K-factors 
 * Introduce impedance penalties on network links (e.g., bridge crossings) 
 
-
-
 |-
 | style="border:none;padding:0.0194in;"| 4. Too may or few intrazonal trips
-| style="border:none;padding:0.0194in;"| * Adjust intrazonal travel times for types of zones with this issue 
-
-
+| style="border:none;padding:0.0194in;"|
+* Adjust intrazonal travel times for types of zones with this issue 
 
 |-
 | style="border:none;padding:0.0194in;"| 5. Model too sensitive or insensitive to changes in level of service
-| style="border:none;padding:0.0194in;"| * Adjust parameters for appropriate level of service variables in impedance/utility functions or friction factors 
-
-
+| style="border:none;padding:0.0194in;"|
+* Adjust parameters for appropriate level of service variables in impedance/utility functions or friction factors 
 
 |}
+
 Tests described here are not intended to be performed in isolation, and an iterative approach to testing may be necessary. For example, consider an urban area that includes parts of two states. If the model is predicting too much travel between the two states, the model may not be sufficiently sensitive to the reasons why interstate travel might be avoided for some purposes, or it could simply be overestimating longer trips (which may be biased toward interstate trips). It is necessary to check the results of both the district-level origin-destination summaries and the trip length frequency distribution comparison to determine the most likely causes for these model results and to suggest the best calibration methods. The best method could be the introduction of interstate K-factors, changes to the friction factors, or some combination of both of these.
 
 ===== K-Factors =====
@@ -331,13 +327,13 @@ In a sense, K-factors are analogous to the alternative specific constants in log
 
 For this reason, K-factors must be used very cautiously. Because they can be used to provide nearly perfect matches between modeled and observed district-level origin-destination flows, it can be very tempting to apply K-factors to resolve differences in origin-destination flows without determining whether they are the best method to solve the problem at hand. The use of K-factors, therefore, should be considered “a last resort” after all other possible causes for error and calibration adjustments have been considered. Even when K-factors are introduced, they should be relatively small in magnitude – the closer to 1.0, the better.
 
-A valid use of K-factors may occur when it is necessary to “zero out” trips between groups of zones. Consider the example of a trip distribution model of external-internal trips for the region depicted in [../FHWA-HEP-10-042/ch6.htm#f6-5 Figure 6.6]. Because of the geography of the modeled region boundary, it is unlikely that trips would occur between External Station 2 and the zones in District A. Trips from the area outside the modeled region as shown in [../FHWA-HEP-10-042/ch6.htm#f6-5 Figure 6.6] would likely enter the modeled region via External Station 1 to travel to zones included in District A. However, internal-external trip productions from the zone representing External Station 2 in the travel model would not be precluded from “traveling” to zones in District A in a typical trip distribution process. So, introducing a K-factor of zero between External Station 2 and the zones in District A would ensure that these unlikely trips would not occur in the model.
+A valid use of K-factors may occur when it is necessary to “zero out” trips between groups of zones. Consider the example of a trip distribution model of external-internal trips for the region depicted in [[#Figure-f6-5|Figure 6.5]]. Because of the geography of the modeled region boundary, it is unlikely that trips would occur between External Station 2 and the zones in District A. Trips from the area outside the modeled region as shown in [[#Figure-f6-5|Figure 6.5]] would likely enter the modeled region via External Station 1 to travel to zones included in District A. However, internal-external trip productions from the zone representing External Station 2 in the travel model would not be precluded from “traveling” to zones in District A in a typical trip distribution process. So, introducing a K-factor of zero between External Station 2 and the zones in District A would ensure that these unlikely trips would not occur in the model.
 
 [[File:VandR-Fig6-5b.jpg|'''Figure 6.5 Example of K-Factor Use with External Stations''']]
 <br />
 
 ----
-<div id="fn19">19&nbsp;Friction factors define the measure of separation based on travel impedances between TAZs. Checks of travel impedance skims for travel time, travel distance, and travel cost are discussed in [../FHWA-HEP-10-042/ch3.htm#sect3-3 Section 3.3]. Those basic travel impedance skims are used for both trip distribution and mode choice modeling.</div>
+<div id="fn19">19&nbsp;Friction factors define the measure of separation based on travel impedances between TAZs. Checks of travel impedance skims for travel time, travel distance, and travel cost are discussed in [[Model_Validation_and_Reasonableness_Checking/Model_Inputs#Network Skims and Path Building|Network Skims and Path Building]]. Those basic travel impedance skims are used for both trip distribution and mode choice modeling.</div>
 
 <div id="fn20">20&nbsp;Zone-level intrazonal percentages from the survey data set are not statistically significant in most cases.</div>
 ----
