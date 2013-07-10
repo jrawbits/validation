@@ -1086,7 +1086,7 @@ If a mode choice model with alternatives corresponding to specific occupancy lev
 There are no applicable criteria guidelines for checks of vehicle occupancy.
 
 ==== 7.2.5   Reasonableness and Sensitivity Testing (Occupancy) ====
-The reasonableness checks for vehicle occupancy are the comparisons to traffic or person trip counts, as discussed in [[#Aggregate Checks (Occupancy)|Aggregate Checks (Occupancy)].
+The reasonableness checks for vehicle occupancy are the comparisons to traffic or person trip counts, as discussed in [[#Aggregate Checks (Occupancy)|Aggregate Checks (Occupancy)]].
 
 Sensitivity testing of vehicle occupancy can be performed for a mode choice model with alternatives corresponding to specific occupancy levels.&nbsp; The types of tests discussed in [[#Reasonableness and Sensitivity Testing (Mode Choice)|Reasonableness and Sensitivity Testing (Mode Choice)]] can be performed, using available model variables that may affect vehicle occupancy, such as household size and HOV lane travel times.
 

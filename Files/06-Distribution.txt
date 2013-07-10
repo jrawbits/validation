@@ -131,7 +131,7 @@ There are no applicable disaggregate checks friction factors.
 There are no applicable criteria guidelines for checks of friction factors.
 
 ==== Reasonableness and Sensitivity Testing ====
-Reasonableness checks have been presented as part of the aggregate checks presented in [[#Aggregate Checks|Aggregate Checks]. There are no applicable sensitivity checks of friction factors.
+Reasonableness checks have been presented as part of the aggregate checks presented in [[#Aggregate Checks|Aggregate Checks]]. There are no applicable sensitivity checks of friction factors.
 
 ==== Troubleshooting Strategies ====
 [[#Table-t6-2|Table 6.2]] shows some of the potential troubleshooting strategies for dealing with issues with friction factors.
@@ -243,7 +243,7 @@ Note: This figure is not critical in understanding the concept of orientation ma
 </div>
 <br/>
 
-While it is good practice to perform disaggregate validation of logit destination choice models, it is often difficult to use the results. Since a destination choice model usually consists of zones, there are hundreds or thousands of alternatives, making the reports of the model application very long and time consuming to analyze. Furthermore, as discussed above, typically household survey sample sizes do not have large enough sample sizes to analyze results at the zone level. While disaggregate validation is a useful tool to identify systematic biases in the estimated models, there are often aggregate tests that are more practical. For example, model application results could be segmented by trip length category, but the aggregate trip length checks described in [../FHWA-HEP-10-042/ch6.htm#sect6-2-2 Section 6.2.2] provide a much easier way of identifying whether modeled trip lengths are accurate.
+While it is good practice to perform disaggregate validation of logit destination choice models, it is often difficult to use the results. Since a destination choice model usually consists of zones, there are hundreds or thousands of alternatives, making the reports of the model application very long and time consuming to analyze. Furthermore, as discussed above, typically household survey sample sizes do not have large enough sample sizes to analyze results at the zone level. While disaggregate validation is a useful tool to identify systematic biases in the estimated models, there are often aggregate tests that are more practical. For example, model application results could be segmented by trip length category, but the aggregate trip length checks described in [[Model_Validation_and_Reasonableness_Checking/Distribution#Aggregate Checks|Aggregate Checks (Distribution)]] provide a much easier way of identifying whether modeled trip lengths are accurate.
 
 ==== Criteria Guidelines ====
 The guidelines presented in this chapter are intended for use with the comparisons of base year modeled results to observed data shown in [[#Aggregate Checks|Aggregate Checks]]. As with criteria guidelines throughout the validation process, the figures presented in this chapter are guidelines and are not to be interpreted as absolute standards. Meeting every guideline does not ensure a validated model, nor does missing a guideline imply that the model is not validated.

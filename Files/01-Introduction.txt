@@ -246,7 +246,7 @@ The remainder of this manual is divided into the following chapters:
 === Acknowledgments ===
 The second edition of the Travel Model Validation and Reasonableness Checking Manual (2010) is the basis for the initial TF Resource pages on model validation and reasonableness checking.  The Wikitext version of the manual is based on the [http://media.tmiponline.org/clearinghouse/FHWA-HEP-10-042 HTML version] and was transcribed into TF Resource by Jeremy Raw.
 
-The second edition of the Travel Model Validation and Reasonableness Checking Manual (2010) updated the first edition published in 1997 ([[#fn4|4])]. The second edition was prepared by Cambridge Systematics under contract to FHWA. The work was performed under a task order administered by the Texas Transportation Institute (TTI), as part of its contract to provide outreach services for FHWA's Travel Model Improvement Program (TMIP).
+The second edition of the Travel Model Validation and Reasonableness Checking Manual (2010) updated the first edition published in 1997 ([[#fn4|4]]). The second edition was prepared by Cambridge Systematics under contract to FHWA. The work was performed under a task order administered by the Texas Transportation Institute (TTI), as part of its contract to provide outreach services for FHWA's Travel Model Improvement Program (TMIP).
 
 Thomas Rossi and David Kurth of Cambridge Systematics were the principal authors of this report. Sarah Sun of FHWA oversaw the report's development, and Gary Thomas of TTI oversaw the task order.
 
