@@ -30,7 +30,7 @@ Other executive summary information may include:
 The overall objective for the executive summary is to summarize the report findings so that both experienced model users and nonmodelers understand the usefulness and the limitations of the model.
 
 === Component Validation ===
-Chapters 3 through 9 of this manual describe the model components typically present in traditional trip-based and emerging activity and tour-based travel models.&nbsp; Model validation documentation should include sections for each of the model components even if validation tests were not performed for a component.&nbsp; Information that a model component has not been validated is crucial to assessing the overall model validity.
+Earlier chapters of this manual describe the model components typically present in traditional trip-based and emerging activity and tour-based travel models.&nbsp; Model validation documentation should include sections for each of the model components even if validation tests were not performed for a component.&nbsp; Information that a model component has not been validated is crucial to assessing the overall model validity.
 
 Validation documentation should also discuss the variables included in the model and how those variables influence the results.&nbsp; For example, mode choice documentation might note that auto operating costs are included in the model and that those costs represent items such as fuel costs, fuel efficiency, other out of pocket costs.&nbsp; This discussion might take place even if an explicit validation of model sensitivity to the variable has not been performed.
 
